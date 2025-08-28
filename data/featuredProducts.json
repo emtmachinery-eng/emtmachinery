@@ -2,7 +2,7 @@
   "featuredHighlight": {
     "name": "MPM MPPT100 POWER TROWEL C/W ROBEN RB20AS ENGINE",
     "description": "",
-    "image": "../featuredProductImage/MPM POWER TROWEL.png",
+    "image": "featuredProductImage/MPM POWER TROWEL.png",
     "currentPrice": "RM 3,299.00",
     "originalPrice": "RM 3,499.00",
     "link": "product.html?id=mr-power-rt-65-robin"
@@ -11,7 +11,7 @@
     {
       "name": "RILAND ZX7 400GT WELDING MACHINE",
       "description": "",
-      "image": "../featuredProductImage/ZX7-400GT.png",
+      "image": "featuredProductImage/ZX7-400GT.png",
       "currentPrice": "RM 2499.00",
       "originalPrice": "RM 2699.00",
       "link": "#"
@@ -19,7 +19,7 @@
     {
       "name": "SENCI SC130A WELDER GENERATOR",
       "description": "",
-      "image": "../featuredProductImage/SC130A.png",
+      "image": "featuredProductImage/SC130A.png",
       "currentPrice": "RM 3099.00",
       "originalPrice": "RM 3299.00",
       "link": "#"
@@ -27,7 +27,7 @@
     {
       "name": "3T MINI CONCRETE MIXER",
       "description": "",
-      "image": "../featuredProductImage/3T CONCRETE MIXER.png",
+      "image": "featuredProductImage/3T CONCRETE MIXER.png",
       "currentPrice": "RM 1599.00",
       "originalPrice": "RM 1699.00",
       "link": "#"

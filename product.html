@@ -203,7 +203,7 @@ async function loadProductData() {
   const productId = new URLSearchParams(window.location.search).get('id');
   if (!productId) return showError('No product ID specified');
   try {
-    const response = await fetch('../data/products.json');
+    const response = await fetch('data/products.json');
     if (!response.ok) throw new Error(`HTTP error! ${response.status}`);
     const data = await response.json();
     let productFound = null;

@@ -1004,7 +1004,7 @@ document.addEventListener('DOMContentLoaded', function () {
     const categoryId = params.category;
     const subcategoryId = params.subcategory;
 
-    fetch('../data/products.json')
+    fetch('data/products.json')
         .then(res => res.json())
         .then(data => {
             // Find category

@@ -3,7 +3,7 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 function fetchProducts() {
-    fetch('../data/products.json')
+    fetch('data/products.json')
         .then(response => response.json())
         .then(data => {
             // Category Sidebar
@@ -124,7 +124,7 @@ function renderProductDetail(categories, productId) {
 
     detailContainer.innerHTML = `
         <h1>${foundProduct.name}</h1>
-        <img src="../images/${foundCategory}/${foundProduct.image}" alt="${foundProduct.name}">
+        <img src="images/${foundCategory}/${foundProduct.image}" alt="${foundProduct.name}">
         <p>${foundProduct.description}</p>
         <p><strong>Price:</strong> ${foundProduct.currency} ${foundProduct.price}</p>
         ${foundSub ? `<p><em>Subcategory:</em> ${foundSub}</p>` : ''}
@@ -135,10 +135,10 @@ function renderProductDetail(categories, productId) {
 function createProductCard(product, categoryId, subId = '') {
     const card = document.createElement('div');
     card.className = 'product-card';
-    const imgPath = `../images/${categoryId}/${product.image}`;
+    const imgPath = `images/${categoryId}/${product.image}`;
     card.innerHTML = `
         <a href="product.html?id=${product.id}">
-            <img src="${imgPath}" alt="${product.name}" onerror="this.src='../images/placeholder.jpg'">
+            <img src="${imgPath}" alt="${product.name}" onerror="this.src='images/placeholder.jpg'">
             <div class="product-info">
                 <h3>${product.name}</h3>
                 <p>${product.description.substring(0, 60)}...</p>

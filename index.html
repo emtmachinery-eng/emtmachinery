@@ -1025,10 +1025,10 @@ font-size: 2.0rem;}
    <!-- Slider -->
    <section class="slider">
      <div class="slider-container" id="slider-container">
-       <div class="slide active"><img src="../sliderImage/sliderImage1.jpg" alt="Slide 1"></div>
-       <div class="slide"><img src="../sliderImage/sliderImage2.jpg" alt="Slide 2"></div>
-       <div class="slide"><img src="../sliderImage/sliderImage3.jpg" alt="Slide 3"></div>
-       <div class="slide"><img src="../sliderImage/sliderImage4.jpg" alt="Slide 4"></div>
+       <div class="slide active"><img src="sliderImage/sliderImage1.jpg" alt="Slide 1"></div>
+       <div class="slide"><img src="sliderImage/sliderImage2.jpg" alt="Slide 2"></div>
+       <div class="slide"><img src="sliderImage/sliderImage3.jpg" alt="Slide 3"></div>
+       <div class="slide"><img src="sliderImage/sliderImage4.jpg" alt="Slide 4"></div>
      </div>
      <div class="slider-controls">
        <span class="prev" id="prev">&#10094;</span>
@@ -1086,14 +1086,14 @@ font-size: 2.0rem;}
 
     <!-- Carousel -->
     <div class="category-carousel">
-        <div class="category-item"><div class="category-icon"><img src="../CATEGORY/POWER TOOLS.png"></div><h3>Power Tools</h3></div>
-        <div class="category-item"><div class="category-icon"><img src="../CATEGORY/AIR COMPRESSOR.png"></i></div><h3>Air Compressors</h3></div>
-        <div class="category-item"><div class="category-icon"><img src="../CATEGORY/AGRICULTURE.png"></div><h3>Agriculture</h3></div>
-        <div class="category-item"><div class="category-icon"><img src="../CATEGORY/CONSTRUCTION EQUIPMENT.png"></div><h3>Construction Equipment</h3></div>
-        <div class="category-item"><div class="category-icon"><img src="../CATEGORY/GENERATOR.png"></i></div><h3>Generators</h3></div>
-        <div class="category-item"><div class="category-icon"><img src="../CATEGORY/HIGH PRESSURE CLEANER.png"></i></div><h3>High Pressure Cleaner</h3></div>
-        <div class="category-item"><div class="category-icon"><img src="../CATEGORY/LIFT.png"></i></div><h3>Lift</h3></div>
-        <div class="category-item"><div class="category-icon"><img src="../CATEGORY/WATER PUMP.png"></i></div><h3>Water Pump</h3></div>
+        <div class="category-item"><div class="category-icon"><img src="CATEGORY/POWER TOOLS.png"></div><h3>Power Tools</h3></div>
+        <div class="category-item"><div class="category-icon"><img src="CATEGORY/AIR COMPRESSOR.png"></i></div><h3>Air Compressors</h3></div>
+        <div class="category-item"><div class="category-icon"><img src="CATEGORY/AGRICULTURE.png"></div><h3>Agriculture</h3></div>
+        <div class="category-item"><div class="category-icon"><img src="CATEGORY/CONSTRUCTION EQUIPMENT.png"></div><h3>Construction Equipment</h3></div>
+        <div class="category-item"><div class="category-icon"><img src="CATEGORY/GENERATOR.png"></i></div><h3>Generators</h3></div>
+        <div class="category-item"><div class="category-icon"><img src="CATEGORY/HIGH PRESSURE CLEANER.png"></i></div><h3>High Pressure Cleaner</h3></div>
+        <div class="category-item"><div class="category-icon"><img src="CATEGORY/LIFT.png"></i></div><h3>Lift</h3></div>
+        <div class="category-item"><div class="category-icon"><img src="CATEGORY/WATER PUMP.png"></i></div><h3>Water Pump</h3></div>
     </div>
 </div>
 
@@ -1316,7 +1316,7 @@ updateSlider();
         });
 
 document.addEventListener('DOMContentLoaded', function() {
-    fetch('../data/featuredProducts.json')
+    fetch('data/featuredProducts.json')
     .then(response => response.json())
     .then(data => {
         // 1. Load featured product

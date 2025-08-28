@@ -109,7 +109,7 @@
 
     async function loadCommunityReviews() {
       try {
-        const response = await fetch('../data/products.json');
+        const response = await fetch('data/products.json');
         if (!response.ok) throw new Error(`HTTP error! ${response.status}`);
         const data = await response.json();
         const container = document.getElementById('reviewContainer');
@@ -147,7 +147,7 @@
       card.className = 'review-card';
       card.innerHTML = `
         <div class="product-header">
-          <img src="../images/${category}/${product.image}" alt="${product.name}">
+          <img src="images/${category}/${product.image}" alt="${product.name}">
           <br><a href="product.html?id=${product.id}">${product.name}</a>
         </div>
         <div class="reviews-list">
