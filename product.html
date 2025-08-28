@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Product Details - EMT Machinery</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+  <style>
+    :root {
+      --primary: #2c3e50;
+      --secondary: #e67e22;
+      --dark: #333;
+    }
+    body { font-family: Arial, sans-serif; margin: 0; padding: 0; color: var(--dark); }
+    header { background: var(--primary); color: #fff; padding: 1rem 0; }
+    header .container { display: flex; justify-content: space-between; align-items: center; width: 90%; margin: auto; }
+    header .logo h1 { margin: 0; font-size: 1.8rem; }
+    header .logo p { margin: 0; font-size: 0.9rem; }
+    nav ul { list-style: none; display: flex; gap: 1rem; margin: 0; padding: 0; }
+    nav a { color: #fff; text-decoration: none; }
+    nav .call-us { font-weight: bold; }
+
+    .container { width: 90%; margin: auto; }
+    .product-detail { padding: 2rem 0; }
+    .breadcrumbs { margin-bottom: 2rem; font-size: 0.9rem; color: #666; }
+    .breadcrumbs a { color: var(--primary); text-decoration: none; }
+    .breadcrumbs span { color: var(--secondary); }
+
+    .product-main { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; margin-bottom: 3rem; }
+    .product-gallery { position: relative; display: flex; flex-direction: column; align-items: center; }
+    .main-image {
+      width: 100%;
+      max-height: 400px;
+      object-fit: contain;
+      border-radius: 10px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+      transition: opacity 0.4s ease;
+      opacity: 1;
+    }
+    .main-image.fade-out { opacity: 0; }
+
+    .gallery-arrow {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 2rem;
+      color: #333;
+      background: rgba(255,255,255,0.8);
+      border-radius: 50%;
+      padding: 0.3rem 0.6rem;
+      cursor: pointer;
+      transition: 0.3s;
+      z-index: 2;
+    }
+    .gallery-arrow:hover { background: rgba(0,0,0,0.1); }
+    .gallery-arrow.left { left: 10px; }
+    .gallery-arrow.right { right: 10px; }
+
+    .thumbnail-grid {
+      display: flex;
+      gap: 0.5rem;
+      margin-top: 1rem;
+      overflow-x: auto;
+      padding-bottom: 0.5rem;
+    }
+    .thumbnail {
+      width: 70px;
+      height: 70px;
+      object-fit: contain;
+      border-radius: 5px;
+      cursor: pointer;
+      border: 2px solid transparent;
+      transition: border-color 0.3s, transform 0.2s;
+    }
+    .thumbnail.active { border-color: var(--primary); transform: scale(1.05); }
+    .thumbnail:hover { border-color: var(--secondary); }
+
+    .product-info h1 { font-size: 2rem; margin-bottom: 1rem; }
+    .pricing { margin: 1.5rem 0; }
+    .current-price { font-size: 2.2rem; font-weight: bold; color: var(--secondary); }
+    .product-actions { display: flex; gap: 1rem; margin: 2rem 0; }
+    .btn-large { padding: 1rem 2rem; font-size: 1.1rem; background: var(--primary); color: #fff; text-decoration: none; border-radius: 5px; }
+    .description-content { line-height: 1.8; margin-bottom: 2rem; font-size: 1.1rem; color: #333; }
+    .specifications { background: #f8f9fa; padding: 2rem; border-radius: 10px; margin: 2rem 0; }
+    .specifications h3 { color: var(--primary); margin-bottom: 1rem; }
+    .specifications pre { white-space: pre-wrap; font-family: inherit; line-height: 1.6; }
+
+    /* Ratings & Reviews Styles */
+    .ratings-section { margin: 3rem 0; }
+    .ratings-header { display: flex; align-items: center; margin-bottom: 2rem; }
+    .overall-rating { display: flex; flex-direction: column; align-items: center; margin-right: 2rem; }
+    .rating-score { font-size: 3rem; font-weight: bold; color: var(--primary); }
+    .stars { color: #ffc107; font-size: 1.5rem; margin: 0.5rem 0; }
+    .rating-count { color: #777; }
+    .rating-summary { flex-grow: 1; }
+    .rating-bar { display: flex; align-items: center; margin: 0.5rem 0; }
+    .rating-label { width: 80px; }
+    .rating-progress { flex-grow: 1; height: 8px; background: #e0e0e0; border-radius: 4px; margin: 0 1rem; overflow: hidden; }
+    .rating-progress-fill { height: 100%; background: #ffc107; }
+    .rating-percent { width: 40px; text-align: right; }
+    
+    .reviews-container { margin-top: 2rem; }
+    .review { 
+        border-bottom: 1px solid #eee; padding: 1.5rem 0; }
+    .review:last-child { border-bottom: none; }
+    .review-header { display: flex; justify-content: space-between; margin-bottom: 0.5rem; }
+    .reviewer-name { font-weight: bold; }
+    .review-date { color: #777; }
+    .review-title { font-weight: bold; margin: 0.5rem 0; }
+    
+    .view-store-rating { 
+      display: inline-block; 
+      margin-top: 1rem; 
+      padding: 0.5rem 1rem; 
+      background: var(--primary); 
+      color: white; 
+      text-decoration: none; 
+      border-radius: 4px; 
+      font-weight: bold;
+    }
+    .view-store-rating:hover { background: #1a2530; }
+
+    footer { background: #f2f2f2; text-align: center; padding: 1rem 0; margin-top: 3rem; font-size: 0.9rem; color: #777; }
+
+    .loading, .error { text-align: center; padding: 3rem; color: #666; }
+    .error { color: #e74c3c; }
+
+    @media (max-width: 768px) {
+      .product-main { grid-template-columns: 1fr; }
+      .product-actions { flex-direction: column; }
+      .thumbnail-grid { grid-template-columns: repeat(3, 1fr); }
+      .ratings-header { flex-direction: column; align-items: flex-start; }
+      .overall-rating { margin-right: 0; margin-bottom: 1rem; }
+    }
+
+    .review-media {
+  margin-top: 1rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+.review-photo {
+  width: 120px;
+  height: auto;
+  border-radius: 5px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+.review-video {
+  width: 240px;
+  border-radius: 5px;
+}
+
+  </style>
+</head>
+<body>
+<header>
+  <div class="container">
+    <div class="logo">
+      <h1>EMT MACHINERY</h1>
+      <p>Malaysia Sdn. Bhd.</p>
+    </div>
+    <nav>
+      <ul>
+        <li><a href="index.html">HOME</a></li>
+        <li><a href="products/">PRODUCTS</a></li>
+        <li><a href="about.html">ABOUT</a></li>
+        <li><a href="contact.html">CONTACT</a></li>
+        <li class="call-us">CALL US: 6084-216905</li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main class="product-detail">
+  <div class="container">
+    <div class="breadcrumbs" id="breadcrumbs">
+      <a href="index.html">Home</a> &gt; 
+      <a href="products/">Products</a> &gt; 
+      <span id="product-category">Loading...</span> &gt; 
+      <span id="product-name">Loading...</span>
+    </div>
+    <div id="product-content">
+      <div class="loading">
+        <i class="fas fa-spinner fa-spin"></i>
+        <p>Loading product details...</p>
+      </div>
+    </div>
+  </div>
+</main>
+
+<footer>
+  <div class="container">
+    <p>&copy; 2023 EMT Machinery (Malaysia) Sdn. Bhd. All rights reserved.</p>
+    <p>Powered by your team</p>
+  </div>
+</footer>
+
+<script>
+document.addEventListener('DOMContentLoaded', loadProductData);
+
+async function loadProductData() {
+  const productId = new URLSearchParams(window.location.search).get('id');
+  if (!productId) return showError('No product ID specified');
+  try {
+    const response = await fetch('../data/products.json');
+    if (!response.ok) throw new Error(`HTTP error! ${response.status}`);
+    const data = await response.json();
+    let productFound = null;
+    let categoryFound = null;
+
+    for (const category of data.categories) {
+      if (Array.isArray(category.products)) {
+        const p = category.products.find(p => p.id === productId);
+        if (p) { productFound = p; categoryFound = category; break; }
+      }
+      if (Array.isArray(category.subcategories)) {
+        for (const sub of category.subcategories) {
+          if (Array.isArray(sub.products)) {
+            const p = sub.products.find(p => p.id === productId);
+            if (p) { productFound = p; categoryFound = category; break; }
+          }
+        }
+      }
+      if (productFound) break;
+    }
+
+    if (productFound && categoryFound) displayProductData(productFound, categoryFound);
+    else showError('Product not found');
+  } catch (err) {
+    console.error(err);
+    showError('Error loading product');
+  }
+}
+
+function showError(message) {
+  document.getElementById('product-content').innerHTML = `
+    <div class="error">
+      <i class="fas fa-exclamation-triangle"></i>
+      <h3>${message}</h3>
+      <a href="products/" class="btn-large">Browse Products</a>
+    </div>
+  `;
+}
+
+function displayProductData(product, category) {
+  document.title = `${product.name} | EMT Machinery`;
+  const categoryName = category.id;
+  const images = Array.isArray(product.images) && product.images.length > 0 ? product.images : [product.image];
+  let currentIndex = 0;
+
+  const updateMainImage = (index) => {
+    const mainImg = document.getElementById('main-image');
+    mainImg.classList.add('fade-out');
+    setTimeout(() => {
+      currentIndex = index;
+      mainImg.src = `images/${categoryName}/${images[currentIndex]}`;
+      document.querySelectorAll('.thumbnail').forEach((thumb, i) => {
+        thumb.classList.toggle('active', i === currentIndex);
+      });
+      mainImg.classList.remove('fade-out');
+    }, 200);
+  };
+
+  // Calculate average rating and rating distribution
+  let averageRating = 0;
+  let ratingDistribution = {5: 0, 4: 0, 3: 0, 2: 0, 1: 0};
+  
+  if (product.reviews && product.reviews.length > 0) {
+    const totalRating = product.reviews.reduce((sum, review) => {
+      ratingDistribution[review.rating]++;
+      return sum + review.rating;
+    }, 0);
+    averageRating = (totalRating / product.reviews.length).toFixed(1);
+    
+    // Convert counts to percentages
+    for (let i = 5; i >= 1; i--) {
+      ratingDistribution[i] = (ratingDistribution[i] / product.reviews.length) * 100;
+    }
+  }
+
+  document.getElementById('product-content').innerHTML = `
+    <div class="product-main">
+      <div class="product-gallery">
+        <span class="gallery-arrow left"><i class="fas fa-chevron-left"></i></span>
+        <img src="images/${categoryName}/${images[0]}" alt="${product.name}" class="main-image" id="main-image">
+        <span class="gallery-arrow right"><i class="fas fa-chevron-right"></i></span>
+        ${images.length > 1 ? `
+          <div class="thumbnail-grid">
+            ${images.map((img, i) => `
+              <img src="images/${categoryName}/${img}" alt="${product.name} ${i+1}" class="thumbnail ${i === 0 ? 'active' : ''}" data-index="${i}">
+            `).join('')}
+          </div>
+        ` : ''}
+      </div>
+      <div class="product-info">
+        <h1>${product.name}</h1>
+        ${product.reviews && product.reviews.length > 0 ? `
+          <div class="rating-badge">
+            <div class="stars">${getStarRating(averageRating)}</div>
+            <span>${averageRating} out of 5 (${product.reviews.length} review${product.reviews.length !== 1 ? 's' : ''})</span>
+          </div>
+        ` : ''}
+        <div class="pricing"><span class="current-price">${
+          (!product.price || Number(product.price) === 0) ? "Contact for price" : `${product.currency} ${Number(product.price).toFixed(2)}`
+        }</span></div>
+        <div class="product-actions">
+          <a href="contact.html" class="btn-large"><i class="fas fa-envelope"></i> Contact for Inquiry</a>
+        </div>
+        <div class="description-content">${product.description ? product.description.replace(/\n/g, '<br>') : ''}</div>
+      </div>
+    </div>
+    ${product.specifications ? `<div class="specifications"><h3>Specifications</h3><pre>${product.specifications}</pre></div>` : ''}
+    
+    <!-- Ratings & Reviews Section -->
+    ${product.reviews && product.reviews.length > 0 ? `
+  <div class="ratings-section">
+    <h2>Rating & Reviews (${product.reviews.length})</h2>
+    <div class="ratings-header">
+      <div class="overall-rating">
+        <div class="rating-score">${averageRating}</div>
+        <div class="stars">${getStarRating(averageRating)}</div>
+        <div class="rating-count">${product.reviews.length} review${product.reviews.length !== 1 ? 's' : ''}</div>
+      </div>
+      <div class="rating-summary">
+        ${[5, 4, 3, 2, 1].map(stars => `
+          <div class="rating-bar">
+            <div class="rating-label">${stars} star</div>
+            <div class="rating-progress">
+              <div class="rating-progress-fill" style="width: ${ratingDistribution[stars]}%"></div>
+            </div>
+            <div class="rating-percent">${Math.round(ratingDistribution[stars])}%</div>
+          </div>
+        `).join('')}
+      </div>
+    </div>
+
+    <div class="reviews-list">
+      ${product.reviews.map(review => `
+        <div class="review">
+          <div class="review-header">
+            <div class="reviewer-name">${review.reviewer}</div>
+            <div class="review-date">${formatDate(review.date)}</div>
+          </div>
+          <div class="stars">${getStarRating(review.rating)}</div>
+          ${review.title ? `<div class="review-title">${review.title}</div>` : ''}
+          <div class="review-content">${review.comment}</div>
+          ${review.media && review.media.length > 0 ? `
+            <div class="review-media">
+              ${review.media.map(item => {
+                if (item.type === 'photo') {
+                  return `<img src="reviews/${item.src}" alt="review photo" class="review-photo" />`;
+                } else if (item.type === 'video') {
+                  return `<video controls class="review-video">
+                            <source src="reviews/${item.src}" type="video/mp4">
+                            Your browser does not support the video tag.
+                          </video>`;
+                }
+                return '';
+              }).join('')}
+            </div>
+          ` : ''}
+        </div>
+      `).join('')}
+    </div>
+
+  </div>
+` : `
+  <div class="ratings-section">
+    <h2>Rating & Reviews (0)</h2>
+    <p>No reviews yet for this product.</p>
+  </div>
+`}
+
+  `;
+  
+  document.getElementById('product-name').textContent = product.name;
+  document.getElementById('product-category').textContent = category.name;
+
+  if (images.length > 1) {
+    document.querySelector('.gallery-arrow.left').addEventListener('click', () => {
+      updateMainImage((currentIndex - 1 + images.length) % images.length);
+    });
+    document.querySelector('.gallery-arrow.right').addEventListener('click', () => {
+      updateMainImage((currentIndex + 1) % images.length);
+    });
+    document.querySelectorAll('.thumbnail').forEach(thumb => {
+      thumb.addEventListener('click', (e) => {
+        updateMainImage(Number(e.target.dataset.index));
+      });
+    });
+  } else {
+    document.querySelector('.gallery-arrow.left').style.display = 'none';
+    document.querySelector('.gallery-arrow.right').style.display = 'none';
+  }
+}
+
+// Helper function to generate star rating HTML
+function getStarRating(rating) {
+  const fullStars = Math.floor(rating);
+  const halfStar = rating % 1 >= 0.5;
+  const emptyStars = 5 - fullStars - (halfStar ? 1 : 0);
+  
+  let starsHTML = '';
+  for (let i = 0; i < fullStars; i++) {
+    starsHTML += '<i class="fas fa-star"></i>';
+  }
+  if (halfStar) {
+    starsHTML += '<i class="fas fa-star-half-alt"></i>';
+  }
+  for (let i = 0; i < emptyStars; i++) {
+    starsHTML += '<i class="far fa-star"></i>';
+  }
+  return starsHTML;
+}
+
+// Helper function to format date
+function formatDate(dateString) {
+  const date = new Date(dateString);
+  return date.toLocaleDateString('en-US', { 
+    year: 'numeric', 
+    month: 'short', 
+    day: 'numeric',
+    hour: '2-digit',
+    minute: '2-digit'
+  });
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Admin Platform - EMT Machinery</title>
+<style>
+:root {
+    --primary: #3498db;
+    --secondary: #e74c3c;
+    --dark: #333;
+}
+body {font-family: Arial, sans-serif; margin:0; padding:0; background:#f4f4f4;}
+header {background:#222; color:white; padding:1rem;text-align:center;}
+main {padding:2rem;}
+.admin-nav {display:flex; gap:1rem; margin-bottom:1rem; flex-wrap:wrap;}
+.admin-tab {padding:0.5rem 1rem; cursor:pointer; border:none; border-radius:5px; background:#ddd;}
+.admin-tab.active {background:var(--primary); color:white;}
+.admin-content {display:none; background:white; padding:1rem; border-radius:8px; box-shadow:0 3px 10px rgba(0,0,0,0.1);}
+.admin-content.active {display:block;}
+.form-group {margin-bottom:1rem;}
+.form-group label {display:block; font-weight:bold; margin-bottom:0.3rem;}
+.form-group input, .form-group textarea, .form-group select {width:100%; padding:0.5rem; border:1px solid #ccc; border-radius:5px;}
+.btn-admin {padding:0.5rem 1rem; background:var(--primary); color:white; border:none; border-radius:5px; cursor:pointer;}
+.btn-admin:hover {opacity:0.9;}
+.item {border:1px solid #ccc; padding:0.5rem; border-radius:5px; margin-bottom:0.5rem; display:flex; justify-content:space-between; align-items:center;}
+.item-actions button {margin-left:0.3rem;}
+.alert {padding:0.5rem; margin-bottom:1rem; border-radius:5px;}
+.alert-success {background:#d4edda; color:#155724;}
+.alert-error {background:#f8d7da; color:#721c24;}
+</style>
+</head>
+<body>
+
+<header>
+<h1>EMT Machinery Admin Platform</h1>
+<p>Manage Categories, Products, and Reviews</p>
+</header>
+
+<main>
+<div class="admin-nav">
+<button class="admin-tab active" data-tab="categories-tab">Categories</button>
+<button class="admin-tab" data-tab="products-tab">Products</button>
+<button class="admin-tab" data-tab="reviews-tab">Reviews</button>
+</div>
+
+<!-- CATEGORIES -->
+<div id="categories-tab" class="admin-content active">
+<h2>Manage Categories</h2>
+<div id="category-alert"></div>
+<form id="category-form">
+<div class="form-group"><label>Category ID</label><input type="text" id="category-id" required></div>
+<div class="form-group"><label>Category Name</label><input type="text" id="category-name" required></div>
+<div class="form-group"><label>Description</label><textarea id="category-description"></textarea></div>
+<button type="submit" class="btn-admin">Add Category</button>
+</form>
+<h3>Existing Categories</h3>
+<div id="category-list"></div>
+</div>
+
+<!-- PRODUCTS -->
+<div id="products-tab" class="admin-content">
+<h2>Manage Products</h2>
+<div id="product-alert"></div>
+<form id="product-form">
+<div class="form-group"><label>Product ID</label><input type="text" id="product-id" required></div>
+<div class="form-group"><label>Product Name</label><input type="text" id="product-name" required></div>
+<div class="form-group"><label>Category</label><select id="product-category" required></select></div>
+<div class="form-group"><label>Price (RM)</label><input type="number" id="product-price" step="0.01"></div>
+<div class="form-group"><label>Description</label><textarea id="product-description"></textarea></div>
+<div class="form-group"><label>Main Image Filename</label><input type="text" id="product-image"></div>
+<div class="form-group"><label>Additional Images (one per line)</label><textarea id="product-images"></textarea></div>
+<button type="submit" class="btn-admin">Add Product</button>
+</form>
+<h3>Existing Products</h3>
+<div id="product-list"></div>
+</div>
+
+<!-- REVIEWS -->
+<div id="reviews-tab" class="admin-content">
+<h2>Manage Reviews / Comments</h2>
+<div id="review-alert"></div>
+<form id="review-form">
+<div class="form-group"><label>Select Product</label><select id="review-product" required></select></div>
+<div class="form-group"><label>Reviewer Name</label><input type="text" id="reviewer-name" required></div>
+<div class="form-group"><label>Rating (1-5)</label><input type="number" id="review-rating" min="1" max="5" required></div>
+<div class="form-group"><label>Title</label><input type="text" id="review-title"></div>
+<div class="form-group"><label>Comment</label><textarea id="review-comment" required></textarea></div>
+<button type="submit" class="btn-admin">Add Review</button>
+</form>
+<h3>Existing Reviews</h3>
+<div id="review-list"></div>
+</div>
+</main>
+
+<script>
+let data = { categories: [] };
+
+// TAB NAVIGATION
+document.querySelectorAll('.admin-tab').forEach(tab => {
+    tab.addEventListener('click', () => {
+        document.querySelectorAll('.admin-tab').forEach(t => t.classList.remove('active'));
+        document.querySelectorAll('.admin-content').forEach(c => c.classList.remove('active'));
+        tab.classList.add('active');
+        document.getElementById(tab.dataset.tab).classList.add('active');
+    });
+});
+
+// SAVE TO LOCALSTORAGE
+function saveData() {
+    localStorage.setItem('data/products.json', JSON.stringify(data,null,2));
+}
+
+// LOAD DATA
+function loadData() {
+    const stored = localStorage.getItem('data/products.json');
+    if(stored) data = JSON.parse(stored);
+    renderCategories();
+    renderProducts();
+    renderReviews();
+}
+
+// CATEGORY MANAGEMENT
+const categoryForm = document.getElementById('category-form');
+categoryForm.addEventListener('submit', e=>{
+    e.preventDefault();
+    const id = document.getElementById('category-id').value.trim();
+    const name = document.getElementById('category-name').value.trim();
+    const desc = document.getElementById('category-description').value.trim();
+    if(data.categories.find(c=>c.id===id)){
+        alert('Category ID exists');
+        return;
+    }
+    data.categories.push({id,name,description:desc,products:[]});
+    saveData();
+    categoryForm.reset();
+    renderCategories();
+    loadCategorySelect();
+});
+
+function renderCategories() {
+    const list = document.getElementById('category-list');
+    list.innerHTML='';
+    data.categories.forEach(c=>{
+        const div=document.createElement('div');
+        div.className='item';
+        div.innerHTML=`<span>${c.name} (${c.id})</span>
+        <span class="item-actions">
+        <button onclick="editCategory('${c.id}')">Edit</button>
+        <button onclick="deleteCategory('${c.id}')">Delete</button>
+        </span>`;
+        list.appendChild(div);
+    });
+}
+
+window.editCategory=function(id){
+    const c=data.categories.find(c=>c.id===id);
+    document.getElementById('category-id').value=c.id;
+    document.getElementById('category-name').value=c.name;
+    document.getElementById('category-description').value=c.description;
+    categoryForm.onsubmit = e=>{
+        e.preventDefault();
+        c.id=document.getElementById('category-id').value;
+        c.name=document.getElementById('category-name').value;
+        c.description=document.getElementById('category-description').value;
+        saveData();
+        categoryForm.reset();
+        categoryForm.onsubmit=defaultCategorySubmit;
+        renderCategories();
+        loadCategorySelect();
+    };
+};
+window.deleteCategory=function(id){
+    if(confirm('Delete category and all products?')){
+        data.categories=data.categories.filter(c=>c.id!==id);
+        saveData();
+        renderCategories();
+        renderProducts();
+        loadCategorySelect();
+        renderReviews();
+    }
+};
+const defaultCategorySubmit=categoryForm.onsubmit;
+
+// PRODUCT MANAGEMENT
+const productForm=document.getElementById('product-form');
+productForm.addEventListener('submit', e=>{
+    e.preventDefault();
+    const id=document.getElementById('product-id').value.trim();
+    const name=document.getElementById('product-name').value.trim();
+    const cat=document.getElementById('product-category').value;
+    const price=parseFloat(document.getElementById('product-price').value);
+    const desc=document.getElementById('product-description').value.trim();
+    const mainImage=document.getElementById('product-image').value.trim();
+    const images=document.getElementById('product-images').value.split('\n').map(i=>i.trim()).filter(Boolean);
+    const category=data.categories.find(c=>c.id===cat);
+    if(!category){alert('Select category'); return;}
+    if(category.products.find(p=>p.id===id)){
+        alert('Product ID exists');
+        return;
+    }
+    category.products.push({id,name,price,currency:'RM',description:desc,image:mainImage,images});
+    saveData();
+    productForm.reset();
+    renderProducts();
+    loadReviewProductSelect();
+});
+
+function renderProducts(){
+    const list=document.getElementById('product-list');
+    list.innerHTML='';
+    data.categories.forEach(c=>{
+        c.products.forEach(p=>{
+            const div=document.createElement('div');
+            div.className='item';
+            div.innerHTML=`<span>${p.name} (${p.id}) in ${c.name}</span>
+            <span class="item-actions">
+            <button onclick="editProduct('${c.id}','${p.id}')">Edit</button>
+            <button onclick="deleteProduct('${c.id}','${p.id}')">Delete</button>
+            </span>`;
+            list.appendChild(div);
+        });
+    });
+    loadProductSelect();
+}
+
+window.editProduct=function(catId,pId){
+    const c=data.categories.find(c=>c.id===catId);
+    const p=c.products.find(p=>p.id===pId);
+    document.getElementById('product-id').value=p.id;
+    document.getElementById('product-name').value=p.name;
+    document.getElementById('product-category').value=c.id;
+    document.getElementById('product-price').value=p.price;
+    document.getElementById('product-description').value=p.description;
+    document.getElementById('product-image').value=p.image;
+    document.getElementById('product-images').value=(p.images||[]).join('\n');
+    productForm.onsubmit=e=>{
+        e.preventDefault();
+        p.id=document.getElementById('product-id').value;
+        p.name=document.getElementById('product-name').value;
+        p.price=parseFloat(document.getElementById('product-price').value);
+        p.description=document.getElementById('product-description').value;
+        p.image=document.getElementById('product-image').value;
+        p.images=document.getElementById('product-images').value.split('\n').map(i=>i.trim()).filter(Boolean);
+        p.category=document.getElementById('product-category').value;
+        saveData();
+        productForm.reset();
+        productForm.onsubmit=defaultProductSubmit;
+        renderProducts();
+    };
+};
+window.deleteProduct=function(catId,pId){
+    if(confirm('Delete product?')){
+        const c=data.categories.find(c=>c.id===catId);
+        c.products=c.products.filter(p=>p.id!==pId);
+        saveData();
+        renderProducts();
+        renderReviews();
+    }
+};
+const defaultProductSubmit=productForm.onsubmit;
+
+// REVIEW MANAGEMENT
+const reviewForm=document.getElementById('review-form');
+reviewForm.addEventListener('submit', e=>{
+    e.preventDefault();
+    const prodId=document.getElementById('review-product').value;
+    const reviewer=document.getElementById('reviewer-name').value.trim();
+    const rating=parseInt(document.getElementById('review-rating').value);
+    const title=document.getElementById('review-title').value.trim();
+    const comment=document.getElementById('review-comment').value.trim();
+    let product=null;
+    for(const c of data.categories){
+        product=c.products.find(p=>p.id===prodId);
+        if(product) break;
+    }
+    if(!product){alert('Select product');return;}
+    if(!product.reviews) product.reviews=[];
+    product.reviews.push({reviewer,rating,title,comment,date:new Date().toISOString(),media:[]});
+    saveData();
+    reviewForm.reset();
+    renderReviews();
+});
+
+function renderReviews(){
+    const list=document.getElementById('review-list');
+    list.innerHTML='';
+    data.categories.forEach(c=>{
+        c.products.forEach(p=>{
+            if(p.reviews){
+                p.reviews.forEach((r,i)=>{
+                    const div=document.createElement('div');
+                    div.className='item';
+                    div.innerHTML=`<span>${r.reviewer} on ${p.name}: ${r.comment} (${r.rating}/5)</span>
+                    <span class="item-actions">
+                    <button onclick="deleteReview('${p.id}',${i})">Delete</button>
+                    </span>`;
+                    list.appendChild(div);
+                });
+            }
+        });
+    });
+}
+
+window.deleteReview=function(prodId,index){
+    for(const c of data.categories){
+        const p=c.products.find(p=>p.id===prodId);
+        if(p && p.reviews){
+            p.reviews.splice(index,1);
+            saveData();
+            renderReviews();
+            return;
+        }
+    }
+};
+
+// SELECT OPTIONS
+function loadCategorySelect(){
+    const sel=document.getElementById('product-category');
+    sel.innerHTML='<option value="">Select</option>';
+    data.categories.forEach(c=>{
+        const o=document.createElement('option');
+        o.value=c.id; o.textContent=c.name;
+        sel.appendChild(o);
+    });
+}
+function loadProductSelect(){
+    const sel=document.getElementById('review-product');
+    sel.innerHTML='<option value="">Select</option>';
+    data.categories.forEach(c=>{
+        c.products.forEach(p=>{
+            const o=document.createElement('option');
+            o.value=p.id; o.textContent=p.name;
+            sel.appendChild(o);
+        });
+    });
+}
+function loadReviewProductSelect(){ loadProductSelect(); }
+
+loadData();
+loadCategorySelect();
+loadReviewProductSelect();
+</script>
+</body>
+</html>

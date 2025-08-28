@@ -1,0 +1,1468 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EMT Machinery (Malaysia) Sdn. Bhd. - Industrial Equipment Supplier</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+   <style>
+        /* Base Styles */
+        :root {
+            --primary: #2c3e50;
+            --secondary: #e74c3c;
+            --accent: #3498db;
+            --light: #ecf0f1;
+            --dark: #2c3e50;
+            --gray: #95a5a6;
+            --white: #ffffff;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f9f9f9;
+        }
+
+       
+
+        /* Header Styles */
+        header {
+            background-color: var(--primary);
+            color: white;
+            position: sticky;
+            top: 0;
+            z-index: 50;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+ .header-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem; /* space between image and text */
+    margin-left: -6%; /* shift logo and name to the left */
+
+}
+
+.logo img {
+    height: auto; /* adjust size if needed */
+    width: 40%;
+}
+
+.logo h1 {
+    font-size: 1.5rem;
+    font-weight: bold;
+    white-space: nowrap;
+}
+
+
+
+        nav {
+            display: flex;
+            align-items: center;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            align-items: center;
+            margin-right: 1rem;
+        }
+
+        nav ul li {
+            margin-left: 1.2rem;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+            padding: 0.5rem 0;
+            position: relative;
+            font-size: 0.9rem;
+        }
+
+        nav ul li a:after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: 0;
+            left: 0;
+            background-color: var(--secondary);
+            transition: width 0.3s;
+        }
+
+        nav ul li a:hover:after {
+            width: 100%;
+        }
+
+        nav ul li a:hover {
+            color: var(--secondary);
+        }
+
+        .whatsapp-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background-color: #25D366;
+    color: white;
+    padding: 0.2rem 0.5rem;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    margin-left: 0.5%;
+}
+
+.footer-content h3{
+    color: white;
+}
+
+.contact-info a {
+    color: white;
+}
+.whatsapp-btn:hover {
+    background-color: #1ebe57;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+
+    
+
+        /* Compact Search Bar */
+        .nav-search {
+            display: flex;
+            align-items: center;
+            margin-left: 1rem;
+        }
+
+        .nav-search-box {
+            display: flex;
+            position: relative;
+            width: 200px;
+            transition: width 0.3s ease;
+        }
+
+        .nav-search-box:focus-within {
+            width: 250px;
+        }
+
+        #nav-search-input {
+            flex: 1;
+            padding: 0.5rem 1rem;
+            border: none;
+            border-radius: 20px 0 0 20px;
+            font-size: 0.9rem;
+            outline: none;
+            background: rgba(255, 255, 255, 0.1);
+            color: white;
+        }
+
+        #nav-search-input::placeholder {
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        .nav-search-btn {
+            background: var(--secondary);
+            color: white;
+            border: none;
+            padding: 0.5rem;
+            border-radius: 0 20px 20px 0;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            width: 40px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .nav-search-btn:hover {
+            background: #c0392b;
+        }
+
+        /* Mobile menu toggle */
+        .menu-toggle {
+            display: none;
+            flex-direction: column;
+            justify-content: space-around;
+            width: 30px;
+            height: 25px;
+            background: transparent;
+            border: none;
+            cursor: pointer;
+            padding: 0;
+        }
+
+        .menu-toggle span {
+            width: 100%;
+            height: 3px;
+            background-color: white;
+            border-radius: 5px;
+            transition: all 0.3s linear;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1590065480004-477ef6d4d5de?ixlib=rb-4.0.3&auto=format&fit=crop&w=1500&q=80');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 5rem 0;
+            text-align: center;
+        }
+
+        .btn {
+            display: inline-block;
+            background-color: var(--secondary);
+            color: white;
+            padding: 0.8rem 1.5rem;
+            border-radius: 4px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: all 0.3s;
+            border: 2px solid var(--secondary);
+        }
+
+        .btn:hover {
+            background-color: transparent;
+            color: white;
+        }
+
+        .btn-outline {
+            background-color: transparent;
+            border: 2px solid white;
+            margin-left: 1rem;
+        }
+
+        .btn-outline:hover {
+            background-color: white;
+            color: var(--primary);
+        }
+
+       /* Features Section */
+.features {
+    padding: 4rem 0;
+    background-color: var(--white);
+}
+
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.feature-card {
+    text-align: center;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    transition: transform 0.3s;
+}
+
+.feature-card:hover {
+    transform: translateY(-5px);
+}
+
+.feature-icon {
+    font-size: 2.5rem;
+    color: var(--secondary);
+    margin-bottom: 1rem;
+}
+
+.feature-card h3 {
+    margin-bottom: 1rem;
+    color: var(--primary);
+}
+
+/* Mobile-specific styles */
+@media (max-width: 576px) {
+    .features-grid {
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-rows: auto;
+        gap: 1rem;
+    }
+
+    .feature-card {
+        padding: 1rem;
+    }
+
+    .feature-icon {
+        font-size: 1.5rem;
+    }
+
+    .feature-card h3 {
+        font-size: 1rem;
+    }
+
+    .feature-card p {
+        font-size: 0.9rem;
+    }
+
+    /* Force the first card to span full row */
+    .feature-card:first-child {
+        grid-column: 1 / -1;
+    }
+}
+
+    
+        /* Footer */
+        footer {
+            background-color: var(--dark);
+            color: white;
+            padding: 3rem 0 1rem;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-section h3 {
+            margin-bottom: 1.5rem;
+            position: relative;
+            padding-bottom: 0.5rem;
+        }
+
+        .footer-section h3:after {
+            content: '';
+            position: absolute;
+            width: 50px;
+            height: 2px;
+            background-color: var(--secondary);
+            bottom: 0;
+            left: 0;
+        }
+
+        .contact-info {
+            list-style: none;
+        }
+
+        .contact-info li {
+            margin-bottom: 0.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255,255,255,0.1);
+        }
+
+        /* Responsive adjustments remain unchanged... */
+
+        /* Slider styles with sliding effect */
+.slider {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+}
+
+.slider-container {
+  display: flex;
+  transition: transform 0.6s ease-in-out;
+}
+
+.slide {
+  min-width: 100%;
+  box-sizing: border-box;
+}
+
+.slide img {
+  width: 100%;
+  display: block;
+}
+
+.slider-controls {
+  position: absolute;
+  top: 50%;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  transform: translateY(-50%);
+  padding: 0 1rem;
+}
+
+.slider-controls span {
+  cursor: pointer;
+  background: rgba(0, 0, 0, 0.3); /* smaller transparency */
+  color: white;
+  padding: 0.3rem 0.5rem; /* smaller size */
+  border-radius: 50%;
+  font-size: 1.1rem;
+  transition: background 0.3s;
+}
+.slider-controls span:hover {
+  background: rgba(0, 0, 0, 0.6);
+}
+
+/* New Arrival grid */
+.new-arrivals {
+  padding: 2rem 0;
+  background: #fff;
+  position: relative;
+  overflow: hidden;
+          margin-top: 3%;
+
+}
+
+.carousel-wrapper {
+  
+  position: relative;
+  width: 55%;        /* extended width for bigger cards and smooth scroll */
+  margin-left: 5%;    /* keep centered */
+  overflow: visible;
+}
+
+.carousel {
+  display: flex;
+  align-items: stretch;
+  transition: transform 0.4s ease;
+  will-change: transform;
+}
+
+.product-card {
+  flex: 0 0 calc(43% - 1.5rem); /* 4 bigger cards per row */
+  margin-right: 1.5rem;
+  background: #fff;
+  padding: 1.4rem;               /* slightly more inner space */
+  border-radius: 14px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.12);
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  margin-right: 3%;
+}
+
+.product-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 6px 16px rgba(0,0,0,0.18);
+}
+
+.product-card img {
+  width: 100%;
+  height: 250px; /* larger image */
+  object-fit: contain;
+  margin-bottom: 1rem;
+}
+
+.product-card h4 {
+  font-size: 1.25rem; /* larger title */
+  color: var(--primary);
+  margin-bottom: 0.6rem;
+}
+
+.product-card p {
+  font-size: 1rem;
+  color: #555;
+  margin-bottom: 0.8rem;
+}
+
+.old-price {
+  text-decoration: line-through;
+  color: #888;
+  font-size: 0.95rem;
+}
+
+.discounted-price {
+  color: var(--secondary);
+  font-weight: bold;
+  font-size: 2rem;
+}
+
+/* Carousel arrows */
+.carousel-btn {
+  position: absolute;
+  top: 45%;
+  background: rgba(0, 0, 0, 0.25);
+  color: white;
+  border: none;
+  font-size: 1.4rem;   /* slightly larger for balance */
+  padding: 0.1rem 0.6rem;
+  cursor: pointer;
+  border-radius: 90%;
+  transition: background 0.2s;
+  z-index: 5;
+}
+
+.carousel-btn:hover {
+  background: rgba(0, 0, 0, 0.55);
+}
+
+.carousel-btn.prev { left: -5%; }
+.carousel-btn.next { right: -70%; }
+
+/* Responsive adjustments */
+@media (max-width: 992px) {
+  .carousel-wrapper { width: 200%; margin-left: 0; }
+  .product-card {
+    flex: 0 0 calc(33.33% - 1.2rem);
+    padding: 1.2rem;
+  }
+  .product-card img { height: 220px; }
+}
+
+@media (max-width: 600px) {
+  .carousel-wrapper { width: 220%; margin-left: 0; }
+  .product-card {
+    flex: 0 0 calc(50% - 1rem);
+    padding: 1rem;
+  }
+  .product-card img { height: 180px; }
+}
+
+@media (max-width: 600px) {
+    .carousel-btn.prev { left: 5px; }
+    .carousel-btn.next { right: 5px; }
+    .carousel-btn { font-size: 1rem; padding: 0.2rem 0.4rem; }
+}
+
+/* General responsive tweaks */
+@media (max-width: 1200px) {
+  .container { width: 95%; }
+  .logo img { width: 35%; }
+}
+
+@media (max-width: 992px) {
+  nav ul {
+    flex-direction: column;
+    background: var(--primary);
+    position: absolute;
+    top: 100%;
+    right: 0;
+    width: 200px;
+    display: none;
+    padding: 1rem 0;
+  }
+  nav ul.active { display: flex; }
+  nav ul li { margin: 0.5rem 0; }
+  
+  .carousel-wrapper { width: 100%; margin-left: 0; overflow-x: auto; }
+  .product-card { flex: 0 0 70%; margin-right: 1rem; }
+}
+
+@media (max-width: 768px) {
+  .hero h2 { font-size: 2rem; }
+  .hero p { font-size: 1rem; }
+  .product-card img { height: 180px; }
+  .carousel-btn.prev { left: 5px; }
+  .carousel-btn.next { right: 5px; }
+}
+
+
+
+
+ h1, h2, h3, h4, h5, h6 {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            color: var(--primary);
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+
+        .section-padding {
+            padding: 5rem 0;
+        }
+
+        /* Featured Products Section */
+        .featured-products {
+            padding: 5rem 0;
+            background-color: var(--white);
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .section-header h2 {
+            font-size: 1.8rem;
+            color: var(--primary);
+            margin-bottom: .2rem;
+            position: relative;
+            display: inline-block;
+        }
+
+        .section-header h2:after {
+            content: '';
+            position: absolute;
+            width: 60px;
+            height: 4px;
+            background-color: var(--secondary);
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .section-header p {
+            color: var(--gray);
+            font-size: 1.1rem;
+            max-width: 700px;
+            margin: 1.5rem auto 0;
+            line-height: 1.6;
+        }
+
+        /* Category Navigation */
+        .category-nav {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+            margin-bottom: 3rem;
+            border-bottom: 1px solid var(--gray-light);
+            padding-bottom: 1.5rem;
+        }
+
+        .category-item {
+            padding: 0.8rem 1.5rem;
+            border-radius: 30px;
+            background: var(--light);
+            color: var(--dark);
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border: 1px solid transparent;
+        }
+
+    
+
+        /* Featured Product Highlight */
+        .featured-highlight {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            margin-bottom: 2rem;
+            align-items: center;
+        }
+
+        .highlight-image {
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .highlight-image img {
+            width: 85%;
+            height: auto;
+            display: block;
+            transition: transform 0.5s ease;
+        }
+
+        .highlight-image:hover img {
+            transform: scale(1.05);
+        }
+
+        .highlight-content h3 {
+            font-size: 1.8rem;
+            margin-bottom: 1.5rem;
+            color: var(--primary);
+        }
+
+        .highlight-content p {
+            font-size: 1.1rem;
+            color: var(--gray);
+            margin-bottom: 1.5rem;
+            line-height: 1.6;
+        }
+
+        .product-price {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .current-price {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--secondary);
+        }
+
+        .original-price {
+            font-size: 1.4rem;
+            text-decoration: line-through;
+            color: var(--gray);
+        }
+
+        /* Product Grid */
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .product-card {
+            background: var(--white);
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+            transition: all 0.3s ease;
+            border: 1px solid var(--gray-light);
+        }
+
+        .product-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 25px rgba(0, 0, 0, 0.15);
+        }
+
+         .product-card:hover img {
+           transform: scale(1.05);
+        }
+
+        .product-image {
+            width: 85%;
+            object-fit: contain;
+            
+            background: var(--light);
+            border-bottom: 1px solid var(--gray-light);
+             display: block;
+            transition: transform 0.5s ease;
+            background-color: white;
+        }
+
+        .product-info {
+            padding: .5rem;
+        }
+
+        .product-info h4 {
+            font-size: 1.2rem;
+            color: var(--primary);
+            line-height: 1.3;
+        }
+
+        .product-meta {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: .5rem;
+        }
+
+        .product-price-small {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+             text-align: center;
+           margin-left: 22%;     }
+
+        .current-price-small {
+            font-weight: 700;
+            color: var(--secondary);
+            font-size: 1.6rem;
+        }
+
+        .original-price-small {
+            font-size: 0.9rem;
+            text-decoration: line-through;
+            color: var(--gray);
+        }
+
+       
+
+     
+
+        .whatsapp-float {
+    position: fixed;
+    width: 60px;
+    height: 60px;
+    bottom: 20px;
+    right: 20px;
+    background-color: #25D366;
+    color: white;
+    border-radius: 50%;
+    text-align: center;
+    font-size: 30px;
+    line-height: 60px;
+    z-index: 1000;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    transition: all 0.3s ease;
+}
+
+.whatsapp-float:hover {
+    background-color: #1ebe57;
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.4);
+}
+
+        /* Responsive Design */
+        @media (max-width: 1024px) {
+            .featured-highlight {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+            
+            .highlight-content h3 {
+                font-size: 1.8rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .category-nav {
+                gap: 0.8rem;
+            }
+            
+            .category-item {
+                padding: 0.6rem 1rem;
+                font-size: 0.6rem;
+            }
+            
+            .products-grid {
+                grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+                gap: 1.5rem;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .section-header h2 {
+                font-size: 2rem;
+            }
+            
+            .category-nav {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .category-item {
+                width: 100%;
+                text-align: center;
+            }
+            
+            .highlight-content h3 {
+                font-size: 1.6rem;
+            }
+            
+            .product-price {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 0.5rem;
+            }
+            
+            .products-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+
+
+
+
+/* Header with arrows */
+.header-wrapper {
+    display: flex;
+    justify-content: center;
+    position: relative;
+    margin-bottom: .3rem;
+        margin-top: 1.8rem;
+
+}
+
+.header-text {
+    text-align: center;
+}
+
+.header-text h1 { font-size: 1.8rem; }
+.header-text p { color: var(--gray); font-size: 1.2rem; }
+
+/* Arrows */
+.header-arrows {
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    gap: 10px;
+}
+
+.nav-arrow {
+    background: var(--primary);
+    color: #fff;
+    border: none;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.nav-arrow:hover { background: var(--secondary); }
+
+/* Carousel */
+.category-carousel { 
+    margin-bottom: 4.5%;
+    margin-left: -12%;
+    width: 122%;
+    display: flex; overflow: hidden; gap: 15px; }
+
+.category-item {
+    min-width: calc(33% - 10px);
+    background: var(--white);
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+    text-align: center;
+    padding: 0rem 0rem;
+    transition: transform 0.3s ease;
+}
+
+.category-item img{
+   width: 100%;
+  height: 20%; /* larger image */
+  object-fit: contain;
+}
+.category-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+}
+
+.category-item h3 { margin-bottom: 0.1rem; 
+font-size: 2.0rem;}
+
+.btn {
+    display: inline-block;
+    padding: 0.6rem 1.5rem;
+    background: var(--secondary);
+    color: #fff;
+    border-radius: 4px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.9rem;
+}
+
+/* Responsive */
+@media (max-width: 1024px) { .category-item { min-width: calc(33.33% - 10px); } }
+@media (max-width: 768px) { .category-item { min-width: calc(50% - 10px); } }
+@media (max-width: 576px) {
+    .header-wrapper { flex-direction: column; }
+    .header-arrows { position: static; margin-top: 10px; transform: none; }
+    .category-item { min-width: 100%; }
+}
+</style>
+
+</head>
+<body>
+  <header>
+    <div class="container header-container">
+        <button class="menu-toggle" id="menu-toggle">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+        
+        <div class="logo">
+            <a href="index.html" >
+      <img src="../mainPage/EMT LOGO [REMOVE BG].png" alt="Your Logo" />
+            
+        </div>
+        
+        <nav>
+            <ul id="nav-menu">
+                <li><a href="index.html">HOME</a></li>
+                <li><a href="products.html">PRODUCTS</a></li>
+                <li><a href="about.html">ABOUT</a></li>
+                <li><a href="community.html">COMMUNITY</a></li>
+                <li><a href="admin.html">ADMIN</a></li>
+               
+   
+
+
+            </ul>
+            
+            <div class="nav-search">
+                <form id="nav-search-form">
+                    <div class="nav-search-box">
+                        <input type="text" id="nav-search-input" placeholder="Search products..." required>
+                        <button type="submit" class="nav-search-btn">
+                            <i class="fas fa-search"></i>
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </nav>
+    </div>
+</header>
+
+
+    <main>
+        <!-- Hero Section -->
+        <!-- <section class="hero">
+            <div class="container hero-content">
+                <h2>Your Trusted Industrial Machinery Supplier</h2>
+                <p>Established in 2013, EMT Machinery provides high-quality engineering equipment with professional support throughout Malaysia.</p>
+                <div>
+                    <a href="products.html" class="btn">Explore Products</a>
+                    <a href="contact.html" class="btn btn-outline">Contact Us</a>
+                </div>
+            </div>
+        </section> -->
+
+   
+<main>
+   <!-- Slider -->
+   <section class="slider">
+     <div class="slider-container" id="slider-container">
+       <div class="slide active"><img src="../sliderImage/sliderImage1.jpg" alt="Slide 1"></div>
+       <div class="slide"><img src="../sliderImage/sliderImage2.jpg" alt="Slide 2"></div>
+       <div class="slide"><img src="../sliderImage/sliderImage3.jpg" alt="Slide 3"></div>
+       <div class="slide"><img src="../sliderImage/sliderImage4.jpg" alt="Slide 4"></div>
+     </div>
+     <div class="slider-controls">
+       <span class="prev" id="prev">&#10094;</span>
+       <span class="next" id="next">&#10095;</span>
+     </div>
+   </section>
+
+   <!-- New Arrival Section -->
+    <section class="featured-products section-padding">
+    <div class="container">
+        <div class="section-header">
+            <h2>Featured Products</h2>
+        </div>
+
+        
+
+        <div class="featured-highlight" id="featured-highlight">
+            <!-- Featured product will be loaded dynamically -->
+        </div>
+
+        <div class="products-grid" id="products-grid">
+            <!-- Product cards will be loaded dynamically -->
+        </div>
+    </div>
+</section>
+
+
+
+<!-- New Arrivals -->
+<!-- <section class="new-arrivals">
+<div class="section-header">
+                    <h2>Our Products Categories</h2>
+                </div>
+<div class="carousel-wrapper container">
+<button class="carousel-btn prev" id="arrivals-prev">&#10094;</button>
+<div class="carousel" id="arrivals-carousel"></div>
+<button class="carousel-btn next" id="arrivals-next">&#10095;</button>
+</div>
+</section> -->
+
+
+</main>
+
+<div class="container">
+    <!-- Header with centered text and right arrows -->
+    <div class="header-wrapper">
+        <div class="header-text">
+            <h1>Explore EMT Machinery</h1>
+        </div>
+        <div class="header-arrows">
+            <button class="nav-arrow prev"><i class="fas fa-chevron-left"></i></button>
+            <button class="nav-arrow next"><i class="fas fa-chevron-right"></i></button>
+        </div>
+    </div>
+
+    <!-- Carousel -->
+    <div class="category-carousel">
+        <div class="category-item"><div class="category-icon"><img src="../CATEGORY/POWER TOOLS.png"></div><h3>Power Tools</h3></div>
+        <div class="category-item"><div class="category-icon"><img src="../CATEGORY/AIR COMPRESSOR.png"></i></div><h3>Air Compressors</h3></div>
+        <div class="category-item"><div class="category-icon"><img src="../CATEGORY/AGRICULTURE.png"></div><h3>Agriculture</h3></div>
+        <div class="category-item"><div class="category-icon"><img src="../CATEGORY/CONSTRUCTION EQUIPMENT.png"></div><h3>Construction Equipment</h3></div>
+        <div class="category-item"><div class="category-icon"><img src="../CATEGORY/GENERATOR.png"></i></div><h3>Generators</h3></div>
+        <div class="category-item"><div class="category-icon"><img src="../CATEGORY/HIGH PRESSURE CLEANER.png"></i></div><h3>High Pressure Cleaner</h3></div>
+        <div class="category-item"><div class="category-icon"><img src="../CATEGORY/LIFT.png"></i></div><h3>Lift</h3></div>
+        <div class="category-item"><div class="category-icon"><img src="../CATEGORY/WATER PUMP.png"></i></div><h3>Water Pump</h3></div>
+    </div>
+</div>
+
+
+
+        <!-- Categories Section -->
+        <!-- <section class="categories">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Our Product Categories</h2>
+                    <p>Explore our wide range of industrial equipment and tools</p>
+                </div>
+                <div class="categories-grid">
+                    <div class="category-card">
+                        <img src="https://images.unsplash.com/photo-1589939705384-5185137a7f0f?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Power Tools" class="category-img">
+                        <div class="category-info">
+                            <h3>Power Tools</h3>
+                            <p>Professional power tools for industrial applications and construction.</p>
+                            <a href="products.html#power-tools" class="btn">View Products</a>
+                        </div>
+                    </div>
+                    <div class="category-card">
+                        <img src="https://images.unsplash.com/photo-1611010344444-5f9e4d86a6e1?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Air Compressors" class="category-img">
+                        <div class="category-info">
+                            <h3>Air Compressors</h3>
+                            <p>Industrial air compressors and pneumatic equipment for various applications.</p>
+                            <a href="products.html#air-compressors" class="btn">View Products</a>
+                        </div>
+                    </div>
+                    <div class="category-card">
+                        <img src="https://images.unsplash.com/photo-1591382386627-349b692688ff?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Agriculture" class="category-img">
+                        <div class="category-info">
+                            <h3>Agriculture Equipment</h3>
+                            <p>Professional landscaping and gardening equipment for agricultural use.</p>
+                            <a href="products.html?category=AGRICULTURE" class="btn">View Products</a>
+                        </div>
+                    </div> -->
+
+                    
+                </div>
+            </div>
+        </section>
+
+          <!-- Features Section -->
+        <section class="features">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Why Choose EMT Machinery</h2>
+                    <p>We provide comprehensive solutions for all your industrial equipment needs</p>
+                </div>
+                <div class="features-grid">
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-tools"></i>
+                        </div>
+                        <h3>Quality Products</h3>
+                        <p>We offer only the highest quality industrial tools and machinery from trusted brands.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-shipping-fast"></i>
+                        </div>
+                        <h3>Nationwide Delivery</h3>
+                        <p>We deliver across Malaysia with reliable and timely shipping services.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-headset"></i>
+                        </div>
+                        <h3>Expert Support</h3>
+                        <p>Our team of professionals provides technical support and guidance.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <a href="https://wa.me/601110513111" target="_blank" class="whatsapp-float">
+    <i class="fab fa-whatsapp"></i>
+</a>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>About Us</h3>
+                    <p>EMT Machinery (M) Sdn. Bhd. is a leading supplier of industrial equipment and tools in Malaysia, serving professionals since 2013.</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Contact Info</h3>
+                    <ul class="contact-info">
+                        <li><i class="fas fa-map-marker-alt"></i> No.25, Lorong Pahlawan 9, Jalan Pahlawan, 96000 Sibu, Sarawak, Malaysia</li>
+                        <li><i class="fas fa-phone"></i> 084 - 216905</li>
+                        <li><i class="fas fa-mobile-alt"></i> 0111 - 0513111</li>
+                        <li><i class="fas fa-envelope"></i> emtmachinery@gmail.com</li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul class="contact-info">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="products.html">Products</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="contact.html">Contact Us</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 EMT Machinery (Malaysia) Sdn. Bhd. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+
+
+// Slider logic
+const sliderContainer = document.getElementById('slider-container');
+const slides = document.querySelectorAll('.slide');
+const nextBtn = document.getElementById('next');
+const prevBtn = document.getElementById('prev');
+
+
+let currentIndex = 0;
+
+function updateSlider() {
+  sliderContainer.style.transform = `translateX(-${currentIndex * 100}%)`;
+}
+
+function showNext() {
+  currentIndex = (currentIndex + 1) % slides.length;
+  updateSlider();
+}
+
+function showPrev() {
+  currentIndex = (currentIndex - 1 + slides.length) % slides.length;
+  updateSlider();
+}
+
+nextBtn.addEventListener('click', showNext);
+prevBtn.addEventListener('click', showPrev);
+
+// Auto-slide every 5 seconds
+setInterval(showNext, 5000);
+
+updateSlider();
+
+
+
+
+        // Handle search form submission
+        document.getElementById('nav-search-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const searchInput = document.getElementById('nav-search-input');
+            const query = searchInput.value.trim();
+            
+            if (query) {
+                window.location.href = `search.html?q=${encodeURIComponent(query)}`;
+            }
+        });
+
+        // Mobile menu toggle
+        const menuToggle = document.getElementById('menu-toggle');
+        const navMenu = document.getElementById('nav-menu');
+        
+        menuToggle.addEventListener('click', function() {
+            navMenu.classList.toggle('active');
+            
+            // Animate hamburger to X
+            const spans = menuToggle.querySelectorAll('span');
+            if (navMenu.classList.contains('active')) {
+                spans[0].style.transform = 'rotate(45deg) translate(5px, 5px)';
+                spans[1].style.opacity = '0';
+                spans[2].style.transform = 'rotate(-45deg) translate(7px, -6px)';
+            } else {
+                spans[0].style.transform = 'none';
+                spans[1].style.opacity = '1';
+                spans[2].style.transform = 'none';
+            }
+        });
+
+        // Close menu when clicking outside
+        document.addEventListener('click', function(e) {
+            if (!navMenu.contains(e.target) && !menuToggle.contains(e.target) && navMenu.classList.contains('active')) {
+                navMenu.classList.remove('active');
+                
+                // Reset hamburger animation
+                const spans = menuToggle.querySelectorAll('span');
+                spans[0].style.transform = 'none';
+                spans[1].style.opacity = '1';
+                spans[2].style.transform = 'none';
+            }
+        });
+
+        // Simple animation on scroll
+        document.addEventListener('DOMContentLoaded', function() {
+            const animatedElements = document.querySelectorAll('.feature-card, .reason');
+            
+            function checkIfInView() {
+                animatedElements.forEach(element => {
+                    const position = element.getBoundingClientRect();
+                    
+                    if (position.top < window.innerHeight && position.bottom >= 0) {
+                        element.style.opacity = 1;
+                        element.style.transform = 'translateY(0)';
+                    }
+                });
+            }
+            
+            // Initialize elements as hidden
+            animatedElements.forEach(element => {
+                element.style.opacity = 0;
+                element.style.transform = 'translateY(20px)';
+                element.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+            });
+            
+            window.addEventListener('scroll', checkIfInView);
+            window.addEventListener('resize', checkIfInView);
+            checkIfInView(); // Check on initial load
+        });
+
+document.addEventListener('DOMContentLoaded', function() {
+    fetch('../data/featuredProducts.json')
+    .then(response => response.json())
+    .then(data => {
+        // 1. Load featured product
+        const highlightSection = document.querySelector('.featured-highlight');
+        highlightSection.innerHTML = `
+            <div class="highlight-image">
+                <img src="${data.featuredHighlight.image}" alt="${data.featuredHighlight.name}">
+            </div>
+            <div class="highlight-content">
+                <h3>${data.featuredHighlight.name}</h3>
+                <p>${data.featuredHighlight.description}</p>
+                <div class="product-price">
+                    <span class="current-price">${data.featuredHighlight.currentPrice}</span>
+                    <span class="original-price">${data.featuredHighlight.originalPrice}</span>
+                </div>
+                <a href="${data.featuredHighlight.link}" class="btn">View Details</a>
+            </div>
+        `;
+
+        // 2. Load product grid
+        const productsGrid = document.querySelector('.products-grid');
+        productsGrid.innerHTML = '';
+        data.products.forEach(product => {
+            const productCard = document.createElement('div');
+            productCard.classList.add('product-card');
+            productCard.innerHTML = `
+                <img src="${product.image}" alt="${product.name}" class="product-image">
+                <div class="product-info">
+                    <h4>${product.name}</h4>
+                    <p>${product.description}</p>
+                    <div class="product-meta">
+                        <div class="product-price-small">
+                            <span class="current-price-small">${product.currentPrice}</span>
+                            <span class="original-price-small">${product.originalPrice}</span>
+                        </div>
+                       
+                    </div>
+                </div>
+            `;
+            productsGrid.appendChild(productCard);
+        });
+
+        // 3. Scroll animation
+        const animatedElements = document.querySelectorAll('.product-card, .featured-highlight');
+        animatedElements.forEach(element => {
+            element.style.opacity = 0;
+            element.style.transform = 'translateY(20px)';
+            element.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+        });
+
+        function checkIfInView() {
+            animatedElements.forEach(element => {
+                const position = element.getBoundingClientRect();
+                if (position.top < window.innerHeight && position.bottom >= 0) {
+                    element.style.opacity = 1;
+                    element.style.transform = 'translateY(0)';
+                }
+            });
+        }
+
+        window.addEventListener('scroll', checkIfInView);
+        window.addEventListener('resize', checkIfInView);
+        checkIfInView();
+    })
+    .catch(error => console.error('Error loading products:', error));
+
+    // Category click simulation
+    const categoryItems = document.querySelectorAll('.category-item');
+    categoryItems.forEach(item => {
+        item.addEventListener('click', function() {
+            categoryItems.forEach(i => i.classList.remove('active'));
+            this.classList.add('active');
+            console.log(`Filtering by: ${this.textContent}`);
+        });
+    });
+});
+
+
+const carousel = document.querySelector('.category-carousel');
+const items = document.querySelectorAll('.category-item');
+const prevBtn_Category = document.querySelector('.nav-arrow.prev');
+const nextBtn_Category = document.querySelector('.nav-arrow.next');
+
+let scrollPosition = 0;
+
+// Function to detect how many cards fit in one row
+function getItemsPerRow() {
+    if (items.length === 0) return 1;
+    const itemWidth = items[0].offsetWidth + 10; // adjust for gap/margin
+    const perRow = Math.floor(carousel.clientWidth / itemWidth);
+    return Math.max(perRow, 1); // ensure at least 1
+}
+
+
+// Arrow button events
+function scrollCarousel(direction) {
+    const itemsPerClick = getItemsPerRow();
+    const itemWidth = items[0].offsetWidth + 10;
+    const maxScroll = carousel.scrollWidth - carousel.clientWidth;
+
+    scrollPosition += direction * itemWidth * itemsPerClick;
+    scrollPosition = Math.max(0, Math.min(scrollPosition, maxScroll));
+
+    carousel.scrollTo({ left: scrollPosition, behavior: 'smooth' });
+}
+
+nextBtn_Category.addEventListener('click', () => scrollCarousel(1));
+prevBtn_Category.addEventListener('click', () => scrollCarousel(-1));
+
+// Touch/swipe support for mobile
+let startX = 0;
+let isDragging = false;
+
+carousel.addEventListener('touchstart', (e) => {
+    startX = e.touches[0].clientX;
+    isDragging = true;
+}, { passive: true });
+
+carousel.addEventListener('touchmove', (e) => {
+    if (!isDragging) return;
+    const moveX = e.touches[0].clientX;
+    const diff = startX - moveX;
+
+    // Drag visually (optional)
+    carousel.scrollLeft = scrollPosition + diff;
+}, { passive: true });
+
+carousel.addEventListener('touchend', (e) => {
+    if (!isDragging) return;
+    isDragging = false;
+    const endX = e.changedTouches[0].clientX;
+    const diff = startX - endX;
+
+    // Threshold: swipe left or right
+    const threshold = 50; // px
+    if (diff > threshold) {
+        scrollCarousel(1); // swipe left, go next
+    } else if (diff < -threshold) {
+        scrollCarousel(-1); // swipe right, go prev
+    } else {
+        // Snap back if swipe is too small
+        carousel.scrollTo({ left: scrollPosition, behavior: 'smooth' });
+    }
+});
+
+
+    </script>
+</body>
+</html>

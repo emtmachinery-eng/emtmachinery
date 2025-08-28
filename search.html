@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Search Results - EMT Machinery</title>
+  <link rel="stylesheet" href="css/style.css"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"/>
+  <style>
+    .search-results { padding: 2rem 0; }
+    .search-info { text-align: center; margin-bottom: 2rem; }
+    .search-info h1 { color: var(--dark); margin-bottom: 0.5rem; }
+    .search-query { color: var(--secondary); font-weight: bold; }
+    .results-count { color: #666; margin-bottom: 1rem; }
+    .no-results { text-align: center; padding: 3rem; color: #666; }
+    .no-results i { font-size: 3rem; margin-bottom: 1rem; color: #bdc3c7; }
+
+    .search-filters {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      margin-bottom: 2rem;
+      flex-wrap: wrap;
+    }
+    .filter-btn {
+      padding: 0.5rem 1rem;
+      border: 2px solid var(--primary);
+      background: white;
+      color: var(--primary);
+      border-radius: 20px;
+      cursor: pointer;
+      transition: all 0.3s;
+    }
+    .filter-btn.active,
+    .filter-btn:hover {
+      background: var(--primary);
+      color: white;
+    }
+    /* Add these for product display */
+    .products-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1.5rem;
+    }
+    .product-card {
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      overflow: hidden;
+      background: white;
+      display: flex;
+      flex-direction: column;
+      transition: box-shadow 0.2s;
+    }
+    .product-card:hover { box-shadow: 0 4px 10px rgba(0,0,0,0.1); }
+    .product-card img {
+      width: 100%;
+      height: 180px;
+      object-fit: contain;
+      background: #f8f8f8;
+    }
+    .product-info {
+      padding: 1rem;
+      flex: 1;
+    }
+    .product-title {
+      font-size: 1.1rem;
+      font-weight: bold;
+      margin-bottom: 0.3rem;
+    }
+    .product-description {
+      font-size: 0.9rem;
+      color: #555;
+      margin-bottom: 0.5rem;
+    }
+    .product-price {
+      font-weight: bold;
+      color: var(--secondary);
+      margin-bottom: 0.5rem;
+    }
+    .btn-view {
+      display: inline-block;
+      padding: 0.4rem 0.8rem;
+      background: var(--primary);
+      color: white;
+      text-decoration: none;
+      border-radius: 4px;
+      font-size: 0.9rem;
+    }
+  </style>
+</head>
+<body>
+<header>
+  <div class="container">
+    <div class="logo">
+      <h1>EMT MACHINERY</h1>
+      <p>Malaysia Sdn. Bhd.</p>
+    </div>
+    <nav>
+      <ul>
+        <li><a href="index.html">HOME</a></li>
+        <li><a href="products/">PRODUCTS</a></li>
+        <li><a href="about.html">ABOUT</a></li>
+        <li><a href="contact.html">CONTACT</a></li>
+        <li class="call-us">CALL US: 6084-216905</li>
+      </ul>
+    </nav>
+  </div>
+  <div class="search-container">
+    <div class="container">
+      <form id="search-form" onsubmit="handleSearch(event)">
+        <div class="search-box">
+          <input type="text" id="search-input" placeholder="Search products or categories..." required>
+          <button type="submit" class="search-btn"><i class="fas fa-search"></i></button>
+        </div>
+      </form>
+    </div>
+  </div>
+</header>
+
+<main class="search-results">
+  <div class="container">
+    <div class="search-info">
+      <h1>Search Results</h1>
+      <div id="search-results-info"></div>
+    </div>
+    <div class="search-filters" id="search-filters" style="display:none;"></div>
+    <div class="products-grid" id="search-results-container"></div>
+  </div>
+</main>
+
+<footer>
+  <div class="container">
+    <p>&copy; 2023 EMT Machinery (Malaysia) Sdn. Bhd. All rights reserved.</p>
+    <p>Powered by your team</p>
+  </div>
+</footer>
+
+<script>
+function getSearchQuery() {
+  const urlParams = new URLSearchParams(window.location.search);
+  return urlParams.get('q') || '';
+}
+function handleSearch(event) {
+  event.preventDefault();
+  const query = document.getElementById('search-input').value.trim();
+  if (query) window.location.href = `search.html?q=${encodeURIComponent(query)}`;
+}
+
+function searchProducts(query, data) {
+  const searchTerms = query.toLowerCase().split(' ').filter(Boolean);
+  const results = [];
+  function checkAndPush(product, category) {
+    let score = 0;
+    if (searchTerms.some(term => product.name.toLowerCase().includes(term))) score += 3;
+    if (searchTerms.some(term => product.description?.toLowerCase().includes(term))) score += 2;
+    if (product.specifications && searchTerms.some(term => product.specifications.toLowerCase().includes(term))) score += 1;
+    if (searchTerms.some(term => category.name.toLowerCase().includes(term))) score += 1;
+    if (score > 0) {
+      results.push({
+        ...product,
+        categoryId: category.id,
+        categoryName: category.name
+      });
+    }
+  }
+  data.categories.forEach(category => {
+    if (category.products) {
+      category.products.forEach(p => checkAndPush(p, category));
+    }
+    if (category.subcategories) {
+      category.subcategories.forEach(sub => {
+        if (sub.products) {
+          sub.products.forEach(p => checkAndPush(p, sub));
+        }
+      });
+    }
+  });
+  return results.sort((a, b) => b.score - a.score);
+}
+
+function displaySearchResults(results, query) {
+  const info = document.getElementById('search-results-info');
+  const container = document.getElementById('search-results-container');
+  const filters = document.getElementById('search-filters');
+  container.innerHTML = '';
+  filters.innerHTML = '';
+  if (results.length === 0) {
+    info.innerHTML = `<div class="no-results"><i class="fas fa-search"></i><h3>No results found for "${query}"</h3></div>`;
+    return;
+  }
+  info.innerHTML = `<p>Found <span class="search-query">${results.length}</span> results for: <span class="search-query">"${query}"</span></p>`;
+  // Build unique categories for filters
+  const uniqueCats = [...new Set(results.map(r => r.categoryId))];
+  filters.style.display = 'flex';
+  filters.innerHTML = `<button class="filter-btn active" data-filter="all">All</button>` +
+    uniqueCats.map(cat => `<button class="filter-btn" data-filter="${cat}">${results.find(r=>r.categoryId===cat).categoryName}</button>`).join('');
+  results.forEach(product => {
+    const card = document.createElement('div');
+    card.className = 'product-card search-result';
+    card.dataset.category = product.categoryId;
+    const imgPath = `images/${product.categoryId}/${product.image}`;
+    const price = (!product.price || Number(product.price) === 0) ? 'Contact' : `${product.currency} ${Number(product.price).toFixed(2)}`;
+    card.innerHTML = `
+      <img src="${imgPath}" alt="${product.name}" onerror="this.src='images/placeholder.jpg'">
+      <div class="product-info">
+        <div class="product-category-badge">${product.categoryName}</div>
+        <h3 class="product-title">${product.name}</h3>
+        <p class="product-description">${product.description || ''}</p>
+        <div class="product-price">${price}</div>
+        <a href="product.html?id=${product.id}" class="btn-view">View Details</a>
+      </div>`;
+    container.appendChild(card);
+  });
+  // Filters click
+  document.querySelectorAll('.filter-btn').forEach(btn => {
+    btn.addEventListener('click', function() {
+      document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+      this.classList.add('active');
+      const filter = this.dataset.filter;
+      document.querySelectorAll('.search-result').forEach(card => {
+        card.style.display = (filter === 'all' || card.dataset.category === filter) ? 'block' : 'none';
+      });
+    });
+  });
+}
+
+async function loadSearchResults() {
+  const query = getSearchQuery();
+  if (!query) return;
+  try {
+    const response = await fetch('data/products.json');
+    const data = await response.json();
+    const results = searchProducts(query, data);
+    displaySearchResults(results, query);
+  } catch (err) {
+    console.error(err);
+    document.getElementById('search-results-info').innerHTML = `<div class="no-results"><i class="fas fa-search"></i><h3>Error loading products</h3></div>`;
+  }
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+  const query = getSearchQuery();
+  if (query) document.getElementById('search-input').value = query;
+  loadSearchResults();
+});
+</script>
+</body>
+</html>

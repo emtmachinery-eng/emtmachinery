@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Community Reviews</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f9f9f9;
+      margin: 0;
+      padding: 0;
+    }
+    .container {
+      max-width: 80%;
+      margin: 2rem auto;
+      padding: 0 1rem;
+    }
+    h1 {
+      text-align: center;
+      margin-bottom: 2rem;
+      color: #333;
+    }
+    .review-card {
+      background: #fff;
+      border-radius: 12px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.08);
+      margin-bottom: 2rem;
+      padding: 1.5rem;
+    }
+    .product-header {
+      
+      
+      margin-bottom: 1rem;
+    }
+    .product-header img {
+      width:30% ;
+      
+      object-fit: cover;
+      border-radius: 8px;
+      margin-right: 1rem;
+    }
+    .product-header a {
+      font-size: 1.2rem;
+      font-weight: bold;
+      color: #333;
+      text-decoration: none;
+    }
+    .product-header a:hover {
+      text-decoration: underline;
+    }
+    .reviews-list {
+      margin-top: 1rem;
+    }
+    .review {
+      border-top: 1px solid #ddd;
+      padding-top: 1rem;
+      margin-top: 1rem;
+    }
+    .review-header {
+      display: flex;
+      justify-content: space-between;
+      font-size: 0.9rem;
+      color: #666;
+    }
+    .reviewer-name {
+      font-weight: bold;
+    }
+    .stars {
+      color: #FFD700;
+      margin: 0.3rem 0;
+    }
+    .review-title {
+      font-weight: bold;
+      margin: 0.3rem 0;
+    }
+    .review-content {
+      margin: 0.5rem 0;
+      color: #444;
+      line-height: 1.5;
+    }
+    .review-media {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-top: 0.5rem;
+    }
+    .review-photo {
+      width: 15%;
+      height: auto;
+      object-fit: cover;
+      border-radius: 6px;
+    }
+    .review-video {
+       width: 15%;
+      height: auto;
+      border-radius: 6px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container" id="reviewContainer">
+    <h1>Community Reviews</h1>
+  </div>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', loadCommunityReviews);
+
+    async function loadCommunityReviews() {
+      try {
+        const response = await fetch('../data/products.json');
+        if (!response.ok) throw new Error(`HTTP error! ${response.status}`);
+        const data = await response.json();
+        const container = document.getElementById('reviewContainer');
+
+        data.categories.forEach(category => {
+          // Category-level products
+          if (Array.isArray(category.products)) {
+            category.products.forEach(product => {
+              if (Array.isArray(product.reviews) && product.reviews.length > 0) {
+                renderProductReviews(container, product,category.name);
+              }
+            });
+          }
+          // Subcategory products
+          if (Array.isArray(category.subcategories)) {
+            category.subcategories.forEach(sub => {
+              if (Array.isArray(sub.products)) {
+                sub.products.forEach(product => {
+                  if (Array.isArray(product.reviews) && product.reviews.length > 0) {
+                    renderProductReviews(container, product,category.name);
+                  }
+                });
+              }
+            });
+          }
+        });
+      } catch (err) {
+        console.error(err);
+        document.getElementById('reviewContainer').innerHTML = `<p>Error loading reviews.</p>`;
+      }
+    }
+
+    function renderProductReviews(container, product,category) {
+      const card = document.createElement('div');
+      card.className = 'review-card';
+      card.innerHTML = `
+        <div class="product-header">
+          <img src="../images/${category}/${product.image}" alt="${product.name}">
+          <br><a href="product.html?id=${product.id}">${product.name}</a>
+        </div>
+        <div class="reviews-list">
+          ${product.reviews.map(review => `
+            <div class="review">
+              <div class="review-header">
+                <div class="reviewer-name">${review.reviewer}</div>
+                <div class="review-date">${formatDate(review.date)}</div>
+              </div>
+              <div class="stars">${getStarRating(review.rating)}</div>
+              ${review.title ? `<div class="review-title">${review.title}</div>` : ''}
+              <div class="review-content">${review.comment}</div>
+              ${review.media && review.media.length > 0 ? `
+                <div class="review-media">
+                  ${review.media.map(item => {
+                    if (item.type === 'photo') {
+                      return `<img src="reviews/${item.src}" alt="review photo" class="review-photo" />`;
+                    } else if (item.type === 'video') {
+                      return `<video controls class="review-video">
+                                <source src="reviews/${item.src}" type="video/mp4">
+                                Your browser does not support the video tag.
+                              </video>`;
+                    }
+                    return '';
+                  }).join('')}
+                </div>
+              ` : ''}
+            </div>
+          `).join('')}
+        </div>
+      `;
+      container.appendChild(card);
+      
+    }
+
+    function formatDate(dateString) {
+      if (!dateString) return '';
+      const options = { year: 'numeric', month: 'short', day: 'numeric' };
+      return new Date(dateString).toLocaleDateString(undefined, options);
+    }
+
+    function getStarRating(rating) {
+      if (!rating) return '';
+      const filled = '★'.repeat(rating);
+      const empty = '☆'.repeat(5 - rating);
+      return filled + empty;
+    }
+  </script>
+</body>
+</html>
