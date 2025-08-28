@@ -929,7 +929,7 @@ function setupEventListeners() {
 
 // Initial load
 document.addEventListener('DOMContentLoaded', () => {
-    fetch('../data/products.json')
+    fetch('data/products.json')
         .then(res => res.json())
         .then(data => {
             productsData = data;
