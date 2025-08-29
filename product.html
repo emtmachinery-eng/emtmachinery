@@ -301,13 +301,10 @@ function displayProductData(product, category) {
             <span>${averageRating} out of 5 (${product.reviews.length} review${product.reviews.length !== 1 ? 's' : ''})</span>
           </div>
         ` : ''}
-        <div class="pricing"><span class="current-price">${
-          (!product.price || Number(product.price) === 0) ? "Contact for price" : `${product.currency} ${Number(product.price).toFixed(2)}`
-        }</span></div>
+      
         <div class="product-actions">
           <a href="contact.html" class="btn-large"><i class="fas fa-envelope"></i> Contact for Inquiry</a>
         </div>
-        <div class="description-content">${product.description ? product.description.replace(/\n/g, '<br>') : ''}</div>
       </div>
     </div>
     ${product.specifications ? `<div class="specifications"><h3>Specifications</h3><pre>${product.specifications}</pre></div>` : ''}

@@ -767,22 +767,11 @@ function createProductCard(product, categoryName) {
     card.className = 'product-card';
     const img = `images/${categoryName}/${product.image}`;
 
-    let priceText = "Contact for price";
-    if (product.price !== undefined && product.price !== null) {
-        const priceNum = Number(product.price);
-        if (!isNaN(priceNum) && priceNum > 0) {
-            priceText = `${product.currency} ${priceNum.toFixed(2)}`;
-        } else if (typeof product.price === 'string' && product.price.trim() !== '') {
-            priceText = `${product.currency} ${product.price}`;
-        }
-    }
 
     card.innerHTML = `
         <img src="${img}" alt="${product.name}" class="product-image" onerror="this.src='images/placeholder.jpg'">
         <div class="product-info">
             <h3 class="product-title">${product.name}</h3>
-            <p class="product-description">${product.description}</p>
-            <div class="product-price">${priceText}</div>
             <div class="product-actions">
                 <a href="#" class="btn-view" onclick="goToProductDetail('${product.id}')">View Details</a>
             </div>
