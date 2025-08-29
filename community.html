@@ -5,18 +5,15 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Community Reviews</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  <style>
+   <link rel="stylesheet" href="css/general.css">
+<style>
     body {
       font-family: Arial, sans-serif;
       background: #f9f9f9;
       margin: 0;
       padding: 0;
     }
-    .container {
-      max-width: 80%;
-      margin: 2rem auto;
-      padding: 0 1rem;
-    }
+    
     h1 {
       text-align: center;
       margin-bottom: 2rem;
@@ -86,7 +83,8 @@
       gap: 0.5rem;
       margin-top: 0.5rem;
     }
-    .review-photo {
+    
+     .review-photo {
       width: 15%;
       height: auto;
       object-fit: cover;
@@ -97,13 +95,155 @@
       height: auto;
       border-radius: 6px;
     }
+   
+   @media (max-width:576px) {
+     .review-photo {
+      width: 45%;
+      height: auto;
+     
+    }
+    .review-video {
+       width: 45%;
+      height: auto;
+     
+    }
+   }
+
+   /* Lightbox overlay */
+.lightbox {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(0,0,0,0.9);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.lightbox-content {
+  max-width: 90%;
+  max-height: 80%;
+}
+
+.lightbox-content img,
+.lightbox-content video {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+/* Close button */
+.lightbox-close {
+  position: absolute;
+  top: 20px; right: 30px;
+  font-size: 2rem;
+  color: white;
+  cursor: pointer;
+}
+
+/* Arrows */
+.lightbox-prev, .lightbox-next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 2rem;
+  color: white;
+  background: rgba(0,0,0,0.4);
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  cursor: pointer;
+  user-select: none;
+}
+.lightbox-prev { left: 20px; }
+.lightbox-next { right: 20px; }
+
   </style>
 </head>
 <body>
+    <header class="site-header">
+  <div class="container header-container">
+    
+    <!-- Mobile Menu Toggle -->
+      <i id="menu-toggle"  class="fa-solid fa-bars menu-toggle"></i>
+
+    <!-- Logo -->
+    <div class="logo">
+      <a href="index.html">
+        <img src="mainPage/EMT LOGO [REMOVE BG].png" alt="EMT Machinery Logo" />
+      </a>
+    </div>
+
+    <!-- Navigation -->
+    <nav>
+      <ul id="nav-menu">
+        <li><a href="index.html" class="active">Home</a></li>
+        <li><a href="products.html">Products</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="community.html">Community</a></li>
+      </ul>
+
+      <!-- Search Bar -->
+      <div class="nav-search">
+        <form id="nav-search-form">
+          <div class="nav-search-box">
+            <input type="text" id="nav-search-input" placeholder="Search products..." required>
+            <button type="submit" class="nav-search-btn">
+              <i class="fas fa-search"></i>
+            </button>
+          </div>
+        </form>
+      </div>
+    </nav>
+  </div>
+</header>
   <div class="container" id="reviewContainer">
     <h1>Community Reviews</h1>
   </div>
 
+
+    <!-- Lightbox -->
+<div class="lightbox" id="lightbox">
+  <span class="lightbox-close" id="lightboxClose">&times;</span>
+  <span class="lightbox-prev" id="lightboxPrev">&#10094;</span>
+  <div class="lightbox-content" id="lightboxContent"></div>
+  <span class="lightbox-next" id="lightboxNext">&#10095;</span>
+</div>
+
+ <a href="https://wa.me/601110513111" target="_blank" class="whatsapp-float">
+    <i class="fab fa-whatsapp"></i>
+</a>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>About Us</h3>
+                    <p>EMT Machinery (M) Sdn. Bhd. is a leading supplier of industrial equipment and tools in Malaysia, serving professionals since 2013.</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Contact Info</h3>
+                    <ul class="contact-info">
+                        <li><i class="fas fa-map-marker-alt"></i> No.25, Lorong Pahlawan 9, Jalan Pahlawan, 96000 Sibu, Sarawak, Malaysia</li>
+                        <li><i class="fas fa-phone"></i> 084 - 216905</li>
+                        <li><i class="fas fa-mobile-alt"></i> 0111 - 0513111</li>
+                        <li><i class="fas fa-envelope"></i> emtmachinery@gmail.com</li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul class="contact-info">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="products.html">Products</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 EMT Machinery (Malaysia) Sdn. Bhd. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
   <script>
     document.addEventListener('DOMContentLoaded', loadCommunityReviews);
 
@@ -195,6 +335,77 @@
       const empty = '☆'.repeat(5 - rating);
       return filled + empty;
     }
+
+    let currentIndex = 0;
+let mediaItems = [];
+
+document.addEventListener("click", function(e) {
+  if (e.target.classList.contains("review-photo") || e.target.classList.contains("review-video")) {
+    e.preventDefault();
+    mediaItems = Array.from(e.target.closest(".review-media").querySelectorAll("img, video"));
+    currentIndex = mediaItems.indexOf(e.target);
+    openLightbox(currentIndex);
+  }
+});
+
+function openLightbox(index) {
+  const lightbox = document.getElementById("lightbox");
+  const lightboxContent = document.getElementById("lightboxContent");
+  lightbox.style.display = "flex";
+  showMedia(index, lightboxContent);
+}
+
+function closeLightbox() {
+  const lightbox = document.getElementById("lightbox");
+  const lightboxContent = document.getElementById("lightboxContent");
+
+  // Stop any video before closing
+  const video = lightboxContent.querySelector("video");
+  if (video) {
+    video.pause();
+    video.currentTime = 0; // optional: reset to start
+  }
+
+  // Clear content (important for iframe embeds later)
+  lightboxContent.innerHTML = "";
+
+  // Hide the lightbox
+  lightbox.style.display = "none";
+}
+
+document.getElementById("lightboxClose").onclick = closeLightbox;
+document.getElementById("lightbox").addEventListener("click", function(e) {
+  if (e.target.id === "lightbox") {
+    closeLightbox();
+  }
+});
+
+
+function showMedia(index, container) {
+  const item = mediaItems[index].cloneNode(true);
+  item.controls = item.tagName === "VIDEO"; // enable controls if video
+  container.innerHTML = "";
+  container.appendChild(item);
+}
+
+document.getElementById("lightboxPrev").onclick = () => {
+  currentIndex = (currentIndex - 1 + mediaItems.length) % mediaItems.length;
+  showMedia(currentIndex, document.getElementById("lightboxContent"));
+};
+
+document.getElementById("lightboxNext").onclick = () => {
+  currentIndex = (currentIndex + 1) % mediaItems.length;
+  showMedia(currentIndex, document.getElementById("lightboxContent"));
+};
+
+/* Close on background click */
+document.getElementById("lightbox").addEventListener("click", function(e) {
+  if (e.target.id === "lightbox") this.style.display = "none";
+});
+
   </script>
+
+
+
 </body>
 </html>

@@ -5,17 +5,7 @@
         menuToggle.addEventListener('click', function() {
             navMenu.classList.toggle('active');
             
-            // Animate hamburger to X
-            const spans = menuToggle.querySelectorAll('span');
-            if (navMenu.classList.contains('active')) {
-                spans[0].style.transform = 'rotate(45deg) translate(5px, 5px)';
-                spans[1].style.opacity = '0';
-                spans[2].style.transform = 'rotate(-45deg) translate(7px, -6px)';
-            } else {
-                spans[0].style.transform = 'none';
-                spans[1].style.opacity = '1';
-                spans[2].style.transform = 'none';
-            }
+           
         });
 
         // Close menu when clicking outside
@@ -23,11 +13,7 @@
             if (!navMenu.contains(e.target) && !menuToggle.contains(e.target) && navMenu.classList.contains('active')) {
                 navMenu.classList.remove('active');
                 
-                // Reset hamburger animation
-                const spans = menuToggle.querySelectorAll('span');
-                spans[0].style.transform = 'none';
-                spans[1].style.opacity = '1';
-                spans[2].style.transform = 'none';
+                
             }
         });
 
