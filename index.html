@@ -447,9 +447,18 @@
      /* Product Grid */
 .products-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr); /* always 3 per row */
+    grid-template-columns: repeat(4, 1fr); /* always 3 per row */
  margin-left: -5%;
+ width: 120%;
 
+} 
+.product-info h4 {
+        font-size: 1.2rem;
+        line-height: 1.1;
+    }
+
+.product-link{
+    text-decoration: none;
 }
 
 .product-card {
@@ -475,6 +484,7 @@
 @media (max-width: 1024px) {
     .products-grid {
         gap: 0.8rem;
+         width: 10%;
     }
     .product-info h4 {
         font-size: 1rem;
@@ -486,7 +496,7 @@
 
 @media (max-width: 768px) {
   .products-grid {
-        grid-template-columns: repeat(3, 1fr); /* ✅ keep 3, no collapse */
+        grid-template-columns: repeat(2, 1fr); /* ✅ keep 3, no collapse */
         gap: 0rem;
     }
     .product-card {
@@ -534,15 +544,18 @@
 
 @media (max-width: 576px) {
     .products-grid {
-        grid-template-columns: repeat(3, 1fr); /* ✅ keep 3, no collapse */
+        grid-template-columns: repeat(2, 1fr); /* ✅ keep 3, no collapse */
         gap: 0rem;
+       
     }
     .product-card {
-        padding: 0.1rem;
+        padding: 0rem;
+        margin-bottom: -7vh;
     }
+    
     .product-info h4 {
         font-size: 0.75rem;
-        line-height: 0.9;
+        line-height: 1;
     }
     
      .highlight-content h3 {
@@ -575,9 +588,9 @@
         }
 
         .product-card img{
-            height: 50%;
+            height: 62%;
             margin-top: 15%;
-            margin-bottom: -5%;
+            margin-bottom: -2%;
         }
 }
 
@@ -1040,6 +1053,7 @@ document.addEventListener('DOMContentLoaded', function() {
             const productCard = document.createElement('div');
             productCard.classList.add('product-card');
             productCard.innerHTML = `
+            <a class="product-link" href="${product.link}">
                 <img src="${product.image}" alt="${product.name}" class="product-image">
                 <div class="product-info">
                     <h4>${product.name}</h4>
@@ -1048,6 +1062,7 @@ document.addEventListener('DOMContentLoaded', function() {
                        
                     </div>
                 </div>
+                </a>
             `;
             productsGrid.appendChild(productCard);
         });

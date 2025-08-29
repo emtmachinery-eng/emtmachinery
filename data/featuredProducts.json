@@ -5,7 +5,7 @@
     "image": "featuredProductImage/MPM POWER TROWEL.png",
     "currentPrice": "RM 3,299.00",
     "originalPrice": "RM 3,499.00",
-    "link": "product.html?id=mr-power-rt-65-robin"
+    "link": "product.html?id=mpm-mppt100-power-trowel-roben"
   },
   "products": [
     {
@@ -14,7 +14,7 @@
       "image": "featuredProductImage/ZX7-400GT.png",
       "currentPrice": "RM 2499.00",
       "originalPrice": "RM 2699.00",
-      "link": "#"
+      "link": "product.html?id=riland-zx7-400gt"
     },
     {
       "name": "SENCI SC130A WELDER GENERATOR",
@@ -22,7 +22,7 @@
       "image": "featuredProductImage/SC130A.png",
       "currentPrice": "RM 3099.00",
       "originalPrice": "RM 3299.00",
-      "link": "#"
+      "link": "product.html?id=senci-sc130a-welder"
     },
     {
       "name": "3T MINI CONCRETE MIXER",
@@ -30,7 +30,15 @@
       "image": "featuredProductImage/3T CONCRETE MIXER.png",
       "currentPrice": "RM 1599.00",
       "originalPrice": "RM 1699.00",
-      "link": "#"
+      "link": "product.html?id=3t-mini-concrete-mixer"
+    },
+     {
+      "name": "ANNOVI VIP8.130 HIGH PRESSURE CLEANER",
+      "description": "",
+      "image": "featuredProductImage/ANNOVI VIP8130.png",
+      "currentPrice": "RM 1599.00",
+      "originalPrice": "RM 1699.00",
+      "link": "product.html?id=annovi-vip8-130"
     }
   ]
 }

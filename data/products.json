@@ -4757,7 +4757,7 @@
 {
   "id": "GENERATOR",
   "name": "GENERATOR",
-  "description": "A comprehensive range of diesel and gasoline generators from various brands including BENMA, MPOWER, YAMAHA, LUTIAN, SEXCI and SENCI, with power outputs from 0.8KVA to 8KW.",
+  "description": "A comprehensive range of diesel and gasoline generators from various brands including BENMA, MPOWER, YAMAHA, LUTIAN, SENCI and SENCI, with power outputs from 0.8KVA to 8KW.",
   "products": [
     {
       "id": "benma-7gf-ldem-diesel-generator",
@@ -4931,8 +4931,8 @@
       "specifications": "Engine: SC420 (14HP)\nFrequency: 50HZ\nRated power: 6.5KW\nMax.power: 7.0KW\nAC Voltage: 240V\nFuel capacity: 25L\nStart system: Recoil/E-start\nDimensions: 725*555*610mm\nNet weight: 90kgs"
     },
     {
-      "id": "sexci-sc10000-generator",
-      "name": "SEXCI SC10000 GASOLINE GENERATOR",
+      "id": "senci-sc10000-generator",
+      "name": "SENCI SC10000 GASOLINE GENERATOR",
       "description": "7.0KW gasoline generator with SC460 (16HP) engine and dual start options.",
       "price": 0.00,
       "currency": "RM",
@@ -4940,8 +4940,8 @@
       "specifications": "Engine: SC460 (16HP)\nFrequency: 50HZ\nRated power: 7 KW\nMax.power: 8 KW\nAC Voltage: 240V\nFuel capacity: 25L\nStart system: Recoil/E-start\nDimensions: 725*555*610mm\nNet weight: 94kg"
     },
     {
-      "id": "sexci-sc1250-generator",
-      "name": "SEXCI SC1250 GASOLINE GENERATOR",
+      "id": "senci-sc1250-generator",
+      "name": "SENCI SC1250 GASOLINE GENERATOR",
       "description": "Compact 0.8KW gasoline generator with recoil start system.",
       "price": 0.00,
       "currency": "RM",
@@ -4949,8 +4949,8 @@
       "specifications": "Frequency: 50HZ\nRated power: 0.8KW\nMax.power: 1.0KW\nAC Voltage: 240V\nFuel capacity: 6L\nStart system: Recoil\nDimensions: 510*390*440mm\nNet weight: 28kgs"
     },
     {
-      "id": "sexci-sc2500-generator",
-      "name": "SEXCI SC2500 GASOLINE GENERATOR",
+      "id": "senci-sc2500-generator",
+      "name": "SENCI SC2500 GASOLINE GENERATOR",
       "description": "2.0KW gasoline generator with 15L fuel capacity and recoil start.",
       "price": 0.00,
       "currency": "RM",
@@ -5343,8 +5343,8 @@
       "specifications": "Input Voltage: 220V±15%\nFrequency: 50/60Hz\nRated Input Capacity: 7.2 KVA\nNo-load Voltage: 56V\nMIG Welding Current: 40-200A\nMMA Welding Current: 40-160A\nPower Factor: ≥0.73\nEfficiency: 80%\nIngress Protection: IP21"
     },
     {
-      "id": "sexci-sc130a-welder",
-      "name": "SEXCI SC130A WELDER GENERATOR",
+      "id": "senci-sc130a-welder",
+      "name": "SENCI SC130A WELDER GENERATOR",
       "description": "Welder generator with 2.0KW power output and 50-130A welding capacity.",
       "price": 0.00,
       "currency": "RM",
