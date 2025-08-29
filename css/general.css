@@ -206,7 +206,7 @@
 
 @media (max-width: 576px) {
 #nav-search-input {
-    width: 14vh;
+    width: 17vh;
 }
     .menu-toggle {
   width: 100%;
@@ -265,11 +265,13 @@
             margin-bottom: 5%;
         }
 
-      
+      .logo{
+    margin-left: -38vh;
+
+      }
   .logo img { 
     margin-top: 20%;
     margin-bottom: 8%;
-    margin-left: -0vh;
     width: 13vh; }
 
     }
