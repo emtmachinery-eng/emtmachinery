@@ -167,8 +167,8 @@
 
        /* Hamburger */
 .menu-toggle {
-  width: 60px;
-  height: 10px;
+  width: 20%;
+  height: 1.5vh;
   cursor: pointer;
   display: none;
   flex-direction: column;
@@ -313,9 +313,10 @@
 
 .features-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-template-columns: 1fr 1fr 1fr;
     gap: 2rem;
     margin-top: 2rem;
+    
 }
 
 .feature-card {
@@ -369,6 +370,12 @@
     .feature-card:first-child {
         grid-column: 1 / -1;
     }
+
+    .features-grid {
+    display: block;
+    
+    
+}
 }
 
     
@@ -589,7 +596,10 @@
 /* General responsive tweaks */
 @media (max-width: 1200px) {
   .container { width: 100%; }
-  .logo img { width: 85%; }
+  .logo img { width: 10vh; }
+  #nav-menu li{
+    margin-left: 3%;
+  }
 }
 
 @media (max-width: 992px) {
@@ -705,8 +715,8 @@
         .featured-highlight {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 2rem;
-            margin-bottom: 2rem;
+            gap: 1rem;
+            margin-bottom: 1rem;
             align-items: center;
             width: 115%;
             margin-left: -5%;
@@ -751,7 +761,7 @@
     display: grid;
     grid-template-columns: repeat(3, 1fr); /* always 3 per row */
  margin-left: -5%;
-            width: 115%;
+
 }
 
 .product-card {
