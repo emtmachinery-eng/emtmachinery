@@ -6,7 +6,9 @@
     <title>About Us - EMT Machinery (Malaysia) Sdn. Bhd.</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <style>
+      <link rel="stylesheet" href="css/general.css">
+
+<style>
         /* Base Styles */
         :root {
             --primary: #2c3e50;
@@ -69,24 +71,9 @@
     justify-content: space-between;
 }
 
-.logo {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem; /* space between image and text */
-    margin-left: -6%; /* shift logo and name to the left */
 
-}
 
-.logo img {
-    height: auto; /* adjust size if needed */
-    width: 40%;
-}
 
-.logo h1 {
-    font-size: 1.5rem;
-    font-weight: bold;
-    white-space: nowrap;
-}
 
 
 
@@ -428,9 +415,7 @@
         }
 
         @media (max-width: 576px) {
-            .logo h1 {
-                font-size: 1.5rem;
-            }
+           
             
             .about-hero {
                 padding: 4rem 0;
@@ -548,45 +533,42 @@
     </style>
 </head>
 <body>
-      <header>
-    <div class="container header-container">
-        <button class="menu-toggle" id="menu-toggle">
-            <span></span>
-            <span></span>
-            <span></span>
-        </button>
-        
-        <div class="logo">
-            <a href="index.html" >
-      <img src="mainPage/EMT LOGO [REMOVE BG].png" alt="Your Logo" />
-            
-        </div>
-        
-        <nav>
-            <ul id="nav-menu">
-                <li><a href="index.html">HOME</a></li>
-                <li><a href="products.html">PRODUCTS</a></li>
-                <li><a href="about.html">ABOUT</a></li>
-                <li><a href="contact.html">CONTACT</a></li>
-                <li><a href="admin.html">ADMIN</a></li>
-               
-   
+     <header class="site-header">
+  <div class="container header-container">
+    
+    <!-- Mobile Menu Toggle -->
+      <i id="menu-toggle"  class="fa-solid fa-bars menu-toggle"></i>
 
-
-            </ul>
-            
-            <div class="nav-search">
-                <form id="nav-search-form">
-                    <div class="nav-search-box">
-                        <input type="text" id="nav-search-input" placeholder="Search products..." required>
-                        <button type="submit" class="nav-search-btn">
-                            <i class="fas fa-search"></i>
-                        </button>
-                    </div>
-                </form>
-            </div>
-        </nav>
+    <!-- Logo -->
+    <div class="logo">
+      <a href="index.html">
+        <img src="mainPage/EMT LOGO [REMOVE BG].png" alt="EMT Machinery Logo" />
+      </a>
     </div>
+
+    <!-- Navigation -->
+    <nav>
+      <ul id="nav-menu">
+        <li><a href="index.html" class="active">Home</a></li>
+        <li><a href="products.html">Products</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="community.html">Community</a></li>
+        <li><a href="admin.html">Admin</a></li>
+      </ul>
+
+      <!-- Search Bar -->
+      <div class="nav-search">
+        <form id="nav-search-form">
+          <div class="nav-search-box">
+            <input type="text" id="nav-search-input" placeholder="Search products..." required>
+            <button type="submit" class="nav-search-btn">
+              <i class="fas fa-search"></i>
+            </button>
+          </div>
+        </form>
+      </div>
+    </nav>
+  </div>
 </header>
 
     <main>
@@ -651,39 +633,7 @@
             </div>
         </section>
 
-       </main>
-        <!-- <section class="partners-section">
-            <div class="container">
-            <div class="partners-grid">
-                <div class="partner-card main-partner">
-                    <div class="partner-logo">
-                        <img src="BUSINESS-PARTNER/logo-makita.jpg" alt="Makita Logo">
-                    </div>
-                    <h3 class="partner-name">Makita</h3>
-                </div>
-                
-                <div class="partner-card main-partner">
-                    <div class="partner-logo">
-                        <img src="BUSINESS-PARTNER/Logo-dong-cheng.jpg" alt="Dong Cheng Logo">
-                    </div>
-                    <h3 class="partner-name">Dong Cheng</h3>
-                </div>
-                
-                <div class="partner-card main-partner">
-                    <div class="partner-logo">
-                        <img src="BUSINESS-PARTNER/Logo-Hikoki.jpg" alt="HiKoki Logo">
-                    </div>
-                    <h3 class="partner-name">HiKoki</h3>
-                </div>
-                
-                <div class="partner-card main-partner">
-                    <div class="partner-logo">
-                        <img src="BUSINESS-PARTNER/logo-nikko.jpg" alt="Nikko Steel Logo">
-                    </div>
-                    <h3 class="partner-name">Nikko Steel</h3>
-                </div>
-            </div></div>
-        </section> -->
+     
         
         <section class="partners-section">
             <div class="container">
@@ -782,7 +732,41 @@
         </section>
 
 
+ <a href="https://wa.me/601110513111" target="_blank" class="whatsapp-float">
+    <i class="fab fa-whatsapp"></i>
+</a>
+    </main>
 
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>About Us</h3>
+                    <p>EMT Machinery (M) Sdn. Bhd. is a leading supplier of industrial equipment and tools in Malaysia, serving professionals since 2013.</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Contact Info</h3>
+                    <ul class="contact-info">
+                        <li><i class="fas fa-map-marker-alt"></i> No.25, Lorong Pahlawan 9, Jalan Pahlawan, 96000 Sibu, Sarawak, Malaysia</li>
+                        <li><i class="fas fa-phone"></i> 084 - 216905</li>
+                        <li><i class="fas fa-mobile-alt"></i> 0111 - 0513111</li>
+                        <li><i class="fas fa-envelope"></i> emtmachinery@gmail.com</li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul class="contact-info">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="products.html">Products</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 EMT Machinery (Malaysia) Sdn. Bhd. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
     <script>
        
 
@@ -843,5 +827,6 @@
 });
 
     </script>
+    <script src="js/general.js"></script>
 </body>
 </html>

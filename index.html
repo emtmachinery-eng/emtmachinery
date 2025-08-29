@@ -941,7 +941,6 @@ font-size: 2.0rem;}
                         <li><a href="index.html">Home</a></li>
                         <li><a href="products.html">Products</a></li>
                         <li><a href="about.html">About Us</a></li>
-                        <li><a href="contact.html">Contact Us</a></li>
                     </ul>
                 </div>
             </div>
@@ -988,17 +987,7 @@ updateSlider();
 
 
 
-        // Handle search form submission
-        document.getElementById('nav-search-form').addEventListener('submit', function(e) {
-            e.preventDefault();
-            const searchInput = document.getElementById('nav-search-input');
-            const query = searchInput.value.trim();
-            
-            if (query) {
-                window.location.href = `products.html?search=${encodeURIComponent(query)}`;
-            }
-        });
-
+     
       
 
         // Simple animation on scroll
