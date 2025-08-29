@@ -78,7 +78,7 @@
             display: flex;
             list-style: none;
             align-items: center;
-            margin-right: 1rem;
+           
         }
 
         nav ul li {
@@ -168,9 +168,9 @@
        /* Hamburger */
 .menu-toggle {
   width: 30px;
-  height: 22px;
+  height: 15px;
   cursor: pointer;
-  display: flex;
+  display: none;
   flex-direction: column;
   justify-content: space-between;
   margin-left: -5%;
@@ -199,19 +199,23 @@
 
 /* Mobile nav menu hidden by default */
 @media (max-width: 992px) {
-  nav ul {
-    flex-direction: column;
-    background: var(--primary);
-    position: absolute;
-    top: 100%;
-    right: 0;
-    width: 220px;
-    display: none;   /* hidden by default */
-    padding: 1rem 0;
+  
+   nav ul {
+    flex-direction: column; /* stack links vertically */
+    display: none;          /* hidden by default */
+    padding-left: 1rem;     /* shift whole menu slightly */
   }
+
   nav ul.active {
     display: flex;   /* shown when active */
+    width: 100%;
+    margin-left: 20%;
+    align-items: flex-start;
   }
+  
+  .menu-toggle {
+  display: flex;
+}
 }
 
 
