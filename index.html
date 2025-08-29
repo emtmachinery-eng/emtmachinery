@@ -45,7 +45,7 @@
  .header-container {
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: space-around;
 }
 
 .logo {
@@ -118,7 +118,7 @@
         .nav-search {
             display: flex;
             align-items: center;
-            margin-left: 1rem;
+            margin-left: 10%;
         }
 
         .nav-search-box {
@@ -128,9 +128,7 @@
             transition: width 0.3s ease;
         }
 
-        .nav-search-box:focus-within {
-            width: 10%;
-        }
+        
 
         #nav-search-input {
             flex: 1;
@@ -287,7 +285,9 @@
 
 /* Mobile-specific styles */
 @media (max-width: 576px) {
-
+#nav-search-input {
+    width: 25vh;
+}
     .menu-toggle {
   width: 100%;
   height: 1.5vh;
@@ -332,9 +332,7 @@
             margin-bottom: 5%;
         }
 
-        #nav-search-input {
-            padding: 0.2rem 0.5rem;
-        }
+        
 
 
     .features-grid {
