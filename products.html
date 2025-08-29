@@ -164,6 +164,11 @@
             font-size: 1.1rem;
             margin-bottom: 0.5rem;
             color: var(--primary);
+             text-align: center;
+             line-height: 1.1;
+        }
+        .btn-view {
+             text-decoration: none;
         }
 
         .product-description {
@@ -185,39 +190,7 @@
             gap: 0.5rem;
         }
 
-        .btn-view, .btn-cart {
-            padding: 0.6rem 1rem;
-            border-radius: var(--border-radius);
-            font-size: 0.9rem;
-            font-weight: 500;
-            transition: var(--transition);
-            text-align: center;
-            flex: 1;
-        }
-
-        .btn-view {
-            background: transparent;
-            border: 1px solid var(--primary);
-            color: var(--primary);
-            text-decoration: none;
-        }
-
-        .btn-view:hover {
-            background: var(--primary);
-            color: var(--white);
-        }
-
-        .btn-cart {
-            background: var(--secondary);
-            border: 1px solid var(--secondary);
-            color: var(--white);
-            cursor: pointer;
-        }
-
-        .btn-cart:hover {
-            background: var(--secondary-dark);
-            border-color: var(--secondary-dark);
-        }
+       
 
         /* Breadcrumb */
         .breadcrumb {
@@ -302,6 +275,43 @@
         top: 0;
         margin-bottom: 1rem;
     }
+     .products-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1vh;
+        }
+          .product-card {
+            background: var(--white);
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            transition: var(--transition);
+            box-shadow: var(--shadow);
+            display: flex;
+            flex-direction: column;
+        }
+
+       
+
+        .product-image {
+            width: 100%;
+            height:20vh;
+           
+        }
+
+        .product-info {
+            padding: .6rem;
+            
+        }
+
+        .product-title {
+            font-size: 0.7rem;
+            line-height: 1.1;
+            text-align: center;
+            margin-bottom: 0.5rem;
+        }
+        
+
+       
 }
 
 
@@ -488,13 +498,16 @@ function createProductCard(product, categoryName) {
 
 
     card.innerHTML = `
+    <a href="#" class="btn-view" onclick="goToProductDetail('${product.id}')">
         <img src="${img}" alt="${product.name}" class="product-image" onerror="this.src='images/placeholder.jpg'">
         <div class="product-info">
             <h3 class="product-title">${product.name}</h3>
             <div class="product-actions">
-                <a href="#" class="btn-view" onclick="goToProductDetail('${product.id}')">View Details</a>
+                
             </div>
-        </div>`;
+        </div>
+        </a>`
+        ;
     return card;
 }
 
