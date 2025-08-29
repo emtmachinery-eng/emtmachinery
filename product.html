@@ -4,24 +4,10 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Product Details - EMT Machinery</title>
-  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/general.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
   <style>
-    :root {
-      --primary: #2c3e50;
-      --secondary: #e67e22;
-      --dark: #333;
-    }
-    body { font-family: Arial, sans-serif; margin: 0; padding: 0; color: var(--dark); }
-    header { background: var(--primary); color: #fff; padding: 1rem 0; }
-    header .container { display: flex; justify-content: space-between; align-items: center; width: 90%; margin: auto; }
-    header .logo h1 { margin: 0; font-size: 1.8rem; }
-    header .logo p { margin: 0; font-size: 0.9rem; }
-    nav ul { list-style: none; display: flex; gap: 1rem; margin: 0; padding: 0; }
-    nav a { color: #fff; text-decoration: none; }
-    nav .call-us { font-weight: bold; }
-
-    .container { width: 90%; margin: auto; }
+   
     .product-detail { padding: 2rem 0; }
     .breadcrumbs { margin-bottom: 2rem; font-size: 0.9rem; color: #666; }
     .breadcrumbs a { color: var(--primary); text-decoration: none; }
@@ -77,11 +63,9 @@
     .thumbnail:hover { border-color: var(--secondary); }
 
     .product-info h1 { font-size: 2rem; margin-bottom: 1rem; }
-    .pricing { margin: 1.5rem 0; }
-    .current-price { font-size: 2.2rem; font-weight: bold; color: var(--secondary); }
-    .product-actions { display: flex; gap: 1rem; margin: 2rem 0; }
+    
     .btn-large { padding: 1rem 2rem; font-size: 1.1rem; background: var(--primary); color: #fff; text-decoration: none; border-radius: 5px; }
-    .description-content { line-height: 1.8; margin-bottom: 2rem; font-size: 1.1rem; color: #333; }
+    .description-content { line-height: 1.8; margin-bottom: 0rem; font-size: 1.1rem; color: #333; }
     .specifications { background: #f8f9fa; padding: 2rem; border-radius: 10px; margin: 2rem 0; }
     .specifications h3 { color: var(--primary); margin-bottom: 1rem; }
     .specifications pre { white-space: pre-wrap; font-family: inherit; line-height: 1.6; }
@@ -132,6 +116,12 @@
       .thumbnail-grid { grid-template-columns: repeat(3, 1fr); }
       .ratings-header { flex-direction: column; align-items: flex-start; }
       .overall-rating { margin-right: 0; margin-bottom: 1rem; }
+        .product-info h1 { font-size: 1.5rem;
+            line-height: 1.1;
+             margin-bottom: 0rem; }
+    .specifications {padding: 0rem; border-radius: 10px; margin:0; }
+
+
     }
 
     .review-media {
@@ -154,24 +144,43 @@
   </style>
 </head>
 <body>
-<header>
-  <div class="container">
+<header class="site-header">
+  <div class="container header-container">
+    
+    <!-- Mobile Menu Toggle -->
+      <i id="menu-toggle"  class="fa-solid fa-bars menu-toggle"></i>
+
+    <!-- Logo -->
     <div class="logo">
-      <h1>EMT MACHINERY</h1>
-      <p>Malaysia Sdn. Bhd.</p>
+      <a href="index.html">
+        <img src="mainPage/EMT LOGO [REMOVE BG].png" alt="EMT Machinery Logo" />
+      </a>
     </div>
+
+    <!-- Navigation -->
     <nav>
-      <ul>
-        <li><a href="index.html">HOME</a></li>
-        <li><a href="products/">PRODUCTS</a></li>
-        <li><a href="about.html">ABOUT</a></li>
-        <li><a href="contact.html">CONTACT</a></li>
-        <li class="call-us">CALL US: 6084-216905</li>
+      <ul id="nav-menu">
+        <li><a href="index.html" class="active">Home</a></li>
+        <li><a href="products.html">Products</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="community.html">Community</a></li>
+        <li><a href="admin.html">Admin</a></li>
       </ul>
+
+      <!-- Search Bar -->
+      <div class="nav-search">
+        <form id="nav-search-form">
+          <div class="nav-search-box">
+            <input type="text" id="nav-search-input" placeholder="Search products..." required>
+            <button type="submit" class="nav-search-btn">
+              <i class="fas fa-search"></i>
+            </button>
+          </div>
+        </form>
+      </div>
     </nav>
   </div>
 </header>
-
 <main class="product-detail">
   <div class="container">
     <div class="breadcrumbs" id="breadcrumbs">
@@ -187,14 +196,41 @@
       </div>
     </div>
   </div>
-</main>
+  <a href="https://wa.me/601110513111" target="_blank" class="whatsapp-float">
+    <i class="fab fa-whatsapp"></i>
+</a>
+    </main>
 
-<footer>
-  <div class="container">
-    <p>&copy; 2023 EMT Machinery (Malaysia) Sdn. Bhd. All rights reserved.</p>
-    <p>Powered by your team</p>
-  </div>
-</footer>
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>About Us</h3>
+                    <p>EMT Machinery (M) Sdn. Bhd. is a leading supplier of industrial equipment and tools in Malaysia, serving professionals since 2013.</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Contact Info</h3>
+                    <ul class="contact-info">
+                        <li><i class="fas fa-map-marker-alt"></i> No.25, Lorong Pahlawan 9, Jalan Pahlawan, 96000 Sibu, Sarawak, Malaysia</li>
+                        <li><i class="fas fa-phone"></i> 084 - 216905</li>
+                        <li><i class="fas fa-mobile-alt"></i> 0111 - 0513111</li>
+                        <li><i class="fas fa-envelope"></i> emtmachinery@gmail.com</li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul class="contact-info">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="products.html">Products</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 EMT Machinery (Malaysia) Sdn. Bhd. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
 
 <script>
 document.addEventListener('DOMContentLoaded', loadProductData);
@@ -302,9 +338,7 @@ function displayProductData(product, category) {
           </div>
         ` : ''}
       
-        <div class="product-actions">
-          <a href="contact.html" class="btn-large"><i class="fas fa-envelope"></i> Contact for Inquiry</a>
-        </div>
+      
       </div>
     </div>
     ${product.specifications ? `<div class="specifications"><h3>Specifications</h3><pre>${product.specifications}</pre></div>` : ''}
@@ -423,5 +457,6 @@ function formatDate(dateString) {
   });
 }
 </script>
+<script src="js/general.js"></script>
 </body>
 </html>
