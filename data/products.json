@@ -6,14 +6,14 @@
       "description": "Automatic pressure controllers and pump controls",
       "products": [
         {
-          "id": "kawago-pc10-automatic-pump-pressure",
-          "name": "KAWAGO PC10 AUTOMATIC PUMP PRESSURE",
-          "description": "KAWAGO automatic pump pressure controller for industrial applications",
-          "price": 0.00,
-          "currency": "RM",
-          "image": "KAWAGO PC10 AUTOMATIC PUMP PRESSURE.PNG",
-          "specifications": "• Temperature: 60°C (Max)\n• Voltage: 220–240V\n• Current: 10A\n• Pressure: 10 Bar (Max)\n• Inlet/Outlet: 1\"\n• Power: 1.1 kW\n• Starting pressure: 1.5 Bar"
-        },
+  "id": "ire-ir01-a-1-inch-automatic-press-control",
+  "name": "IRE IR01-A 1\" AUTOMATIC PRESS CONTROL",
+  "description": "IRE automatic press control with 1\" inlet and outlet",
+  "price": 0.00,
+  "currency": "RM",
+  "image": "IRE IR01-A 1” AUTOMATIC PRESS CONTROL.png",
+  "specifications": "• Temperature: 60°C (Max)\n• Inlet/Outlet: 1\"\n• Current: 10A\n• Pressure: 10 Bar (Max)"
+},
         {
           "id": "unoflow-sk-13-pressure-control",
           "name": "UNOFLOW SK-13 PRESSURE CONTROL",
@@ -172,7 +172,7 @@
           "description": "Professional lawn mower with Loncin 139cc engine",
           "price": 1200.00,
           "currency": "RM",
-          "image": "LAWNMOWER.png",
+          "image": "MPM LM18400 LAWN MOWER PETROL ENGINE.png",
           "specifications": "Engine: LONCIN 139 cc • Sound Level: 96 db (A) • Engine Power: 2.98kW 4.0HP • Vibration Level: 3.228 m/s² • Cutting Width: 18 inch (460mm) • Weight: 25 kg • Fuel Tank: 1.8 litre • Collection Bag: 60L capacity"
         }
       ]
@@ -198,7 +198,26 @@
           "currency": "RM",
           "image": "FST-16DE BATTERY SPRAYER.PNG",
           "specifications": "Pressure: 0.15 – 0.40 mPa • Voltage: DC 12V • Battery Capacity: 8 AH • Tank Capacity: 16 L"
-        }
+        },
+         {
+      "id": "samsam-ssf150-fogging-machine",
+      "name": "SAMSAM SSF-150 FOGGING MACHINE",
+      "description": "Thermal aerosol fogging machine",
+      "price": 0.00,
+      "currency": "RM",
+      "image": "SAMSAM SSF-150~.jpg",
+      "specifications": "• Type: Thermal Aerosol Fog\n• Starting Method: Push Button Start\n• Power Supply: 12V DC Rechargeable Battery\n• Dimensions: 230x1350x340mm\n• Weight: 9kg (empty)\n• Gasoline Tank: 1.8L\n• Gasoline Consumption: 1.5L/h\n• Solution Tank: 8L (Stainless Steel 304)\n• Applications: Mosquito control, pest control, plant protection"
+    },
+    {
+  "id": "compact-kb100-mini-mist-fogger",
+  "name": "COMPACT KB-100 MINI MIST FOGGER",
+  "description": "Portable thermal mini mist fogging machine for pest and mosquito control",
+  "price": 0.00,
+  "currency": "RM",
+  "image": "COMPACT KB-100 MINI MIST FOGGER.PNG",
+  "specifications": "• Model: KB-100\n• Type: Mini Mist Fogger\n• Application: Mosquito control, pest control, disinfection\n• Fuel: Butane Gas Cartridge (or equivalent)\n• Features: Lightweight, portable, easy operation\n• Origin: Made in Korea"
+}
+
       ]
     },
     {
@@ -252,12 +271,12 @@
           "image": "TEKNI OB MOTOR OIL 2T (500ML).PNG"
         },
         {
-          "id": "aimalube-vg68-compressor-oil",
-          "name": "AIMALUBE VG68 COMPRESSOR OIL X 0.5L",
+          "id": "atlas-chicago-2t-tcw3-lubricant 500ml",
+          "name": "ATLAS CHICAGO 2T-TCW3 2 STROKE ENGINE LUBRICANT 500ML",
           "description": "Compressor oil VG68 0.5L",
           "price": 0.00,
           "currency": "RM",
-          "image": "AIMALUBE VG68 COMPRESSOR OIL X 0.5L.PNG"
+          "image": "ATLAS CHICAGO 2T-TCW3 2 STROKE ENGINE LUBRICANT 500ML.PNG"
         }
       ]
     }
@@ -337,24 +356,7 @@
       "image": "DYNATEC AIR COMPRESSOR.PNG",
       "specifications": "Model: BC3-100L • Speed: 1030 rpm • Power: 3.0 HP • Tank: 10 L • Pressure: 8 Bar • Displacement: 250 L/min"
     },
-    {
-      "id": "foxhunter-50l-compressor",
-      "name": "FOXHUNTER 50L AIR COMPRESSOR",
-      "description": "50L air compressor with 2.5HP motor",
-      "price": 0.00,
-      "currency": "RM",
-      "image": "FOXHUNTER 50L AIR COMPRESSOR.PNG",
-      "specifications": "Tank: 50 L • Speed: 2850 rpm • Power: 2.5 HP • No. of Cylinder: 1 • Pressure: 8 Bar • Displacement: 268 L/min"
-    },
-    {
-      "id": "haitun-oil-free-compressor",
-      "name": "HAITUN OIL FREE AIR COMPRESSOR",
-      "description": "Oil-free air compressor with 40L tank",
-      "price": 0.00,
-      "currency": "RM",
-      "image": "HAITUN OIL FREE AIR COMPRESSOR.PNG",
-      "specifications": "Model: DZW150AF040 • Tank: 40L • Speed: 1400 rpm • Pressure: 8 Bar • Power: 1400 W • Displacement: 125 L/min • Noise Level: 79dB"
-    },
+   
     {
       "id": "leopard-lb50b-3hp-compressor",
       "name": "LEOPARD LB50B 3HP COMPRESSOR",
@@ -366,7 +368,7 @@
     },
     {
       "id": "mr-power-rt-65-robin",
-      "name": "MR POWER RT-65 AIR COMPRESSOR [ROBIN]",
+      "name": "MR POWER RT-65 AIR COMPRESSOR [ENGINE]",
       "description": "Industrial air compressor with JKKP certificate",
       "price": 0.00,
       "currency": "RM",
@@ -794,15 +796,7 @@
       "image": "HELVI PROGRESS 25.PNG",
       "specifications": "• Output Voltage: 24 V \n• Power Voltage: 1HP 230V 50Hz \n• Amperage: 25 A"
     },
-    {
-      "id": "helvi-progress-35",
-      "name": "HELVI PROGRESS 35",
-      "description": "35A battery charger with 48V output",
-      "price": 0.00,
-      "currency": "RM",
-      "image": "HELVI PROGRESS 35.PNG",
-      "specifications": "• Output Voltage: 48 V \n• Power Voltage: 1HP 230V 50Hz \n• Amperage: 35 A"
-    },
+    
     {
       "id": "sk-1215-portable-battery-charger",
       "name": "SK-1215 PORTABLE BATTERY CHARGER",
@@ -1172,58 +1166,24 @@
     },
     {
       "id": "honda-gx160-bare-engine",
-      "name": "HONDA GX160 BARE ENGINE",
+      "name": "HONDA GX160/GX200 BARE ENGINE",
       "description": "Air-cooled 4-stroke OHV gasoline engine",
       "price": 0.00,
       "currency": "RM",
       "image": "HONDA.jpg",
       "specifications": "• Engine Type: Air-cooled 4-stroke OHV\n• Bore x Stroke: 68 x 54 mm\n• Displacement: 163 cm³\n• Net Power Output: 4.8 HP (3.6 kW) @ 3,600 rpm\n• Net Torque: 7.6 lb-ft (10.3 Nm) @ 2,500 rpm\n• Compression Ratio: 9.0:1\n• Carburetor: Butterfly\n• Ignition System: Transistorized magneto\n• Starting System: Recoil Starter\n• Oil Capacity: 0.61 US qt. (0.58 L)\n• Fuel Tank Capacity: 3.3 U.S. qts (3.1 liters)"
     },
-    {
-      "id": "honda-gx200-bare-engine",
-      "name": "HONDA GX200 BARE ENGINE",
+     {
+      "id": "honda-gx390-bare-engine",
+      "name": "HONDA GX390 BARE ENGINE",
       "description": "Air-cooled 4-stroke OHV gasoline engine",
       "price": 0.00,
       "currency": "RM",
-      "image": "HONDA.jpg",
-      "specifications": "• Engine Type: Air-cooled 4-stroke OHV\n• Bore x Stroke: 68 x 54 mm\n• Displacement: 196 cm³\n• Net Power Output: 5.5 HP (4.1 kW) @ 3,600 rpm\n• Net Torque: 9.1 lb-ft (12.4 Nm) @ 2,500 rpm\n• Compression Ratio: 8.5:1\n• Carburetor: Butterfly\n• Ignition System: Transistorized magneto\n• Starting System: Recoil Starter\n• Oil Capacity: 0.63 US qt (0.6L)\n• Fuel Tank Capacity: 3.3 U.S. qts (3.1 liters)"
+      "image": "HONDA GX390 BARE ENGINE.png",
+      "specifications": "• Displacement: 389 cm³\n• Net Power Output: 8.7 kW (11.7HP) @ 3,600 rpm\n• Net Torque: 26.5 Nm @ 2,500 rpm\n• Compression Ratio: 8:2:1\n• Starting System: Recoil/Electric Starter\n• Engine Oil Capacity: 1.1 L\n• Fuel Tank Capacity: 6.1 L"
     },
-    {
-      "id": "lautop-la170fa-diesel",
-      "name": "LAUNTOP LA170FA/E DIESEL ENGINE",
-      "description": "Diesel engine model LA170FA/E",
-      "price": 0.00,
-      "currency": "RM",
-      "image": "LAUNTOP DIESEL.jpg",
-      "specifications": "• Bore X stroke: 70 x 57 mm\n• Displacement: 219 cc\n• Engine Speed: 3000/3600 rpm\n• Maximum Output: 3.8/4.2 hp\n• Continuous Output: 3.4/3.8 hp\n• Lube Oil Capacity: 0.75 L\n• Fuel Tank Capacity: 2.5 L\n• Dimension: 332 x 392 x 416 mm\n• Net Weight: 26 kg"
-    },
-    {
-      "id": "lautop-la178fa-diesel",
-      "name": "LAUNTOP LA178FA/E DIESEL ENGINE",
-      "description": "Diesel engine model LA178FA/E",
-      "price": 0.00,
-      "currency": "RM",
-      "image": "LAUNTOP DIESEL.jpg",
-      "specifications": "• Bore X stroke: 78 x 64 mm\n• Displacement: 306 cc\n• Maximum Output: 5.5/6 hp\n• Continuous Output: 5.0/5.4 hp\n• Lube Oil Capacity: 1.1 L\n• Fuel Tank Capacity: 3.5 L\n• Dimension: 383 x 421 x 450 mm\n• Net Weight: 32 kg"
-    },
-    {
-      "id": "lautop-lt210-petrol",
-      "name": "LAUNTOP LT210 PETROL ENGINE",
-      "description": "Petrol engine model LT210",
-      "price": 0.00,
-      "currency": "RM",
-      "image": "LAUNTOP PETROL.jpg",
-      "specifications": "• Displacement: 208 cc\n• Bore x Stroke: 70 x 54 mm\n• Compression ratio: 8.5:1\n• Max output: 7 hp @ 4000 rpm\n• Max torque: 1.35 kg/m @ 2500 rpm\n• Fuel consumption: 230 g/hp.hr\n• Ignition system: TCI\n• Starting system: Recoil or electric (optional)\n• Oil capacity: 0.6 L\n• Fuel capacity: 3.6 L\n• Net weight: 16 kg"
-    },
-    {
-      "id": "lt210fp-engine",
-      "name": "LT210FP",
-      "description": "Petrol engine with recoil/electric start",
-      "price": 0.00,
-      "currency": "RM",
-      "image": "LT210FP.PNG",
-      "specifications": "• Bore x Stroke: 70 x 54 mm\n• Fuel Tank Capacity: 3.6 L\n• Torque: 1.35 @ 2500 rpm\n• Oil Capacity: 0.6 L\n• Output: 7 HP @ 4000 rpm\n• Fuel Consumption: 230 g/kW.H\n• Displacement: 208 cc\n• Starting Method: Recoil/Electric"
-    },
+   
+
     {
       "id": "m-power-mpd-170fa",
       "name": "M POWER MPD-170FA AIR-COOLED DIESEL ENGINE",
@@ -1242,15 +1202,7 @@
       "image": "M POWER MPD-178FA AIR-COOLED DIESEL ENGINE (KEY).PNG",
       "specifications": "• Type: Single-cylinder, 4-stroke, air-cooled\n• Cooling Type: Air-cooled\n• Lub Type: Pressure splash\n• Starting System: Recoil/Electric start\n• Bore X Stroke: 78 x 64 mm\n• Displacement: 306 cc\n• Engine Speed: 3600 rpm\n• Max Output: 6 hp\n• Continuous Output: 5.4 hp\n• Lube Oil Capacity: 1.1 L\n• Fuel Tank Capacity: 3.5 L\n• Net Weight: 32 kg\n• Dimensions: 383 x 421 x 450 mm"
     },
-    {
-      "id": "rato-r200-bare-engine",
-      "name": "RATO R200 BARE ENGINE, 6.5 HP",
-      "description": "6.5 HP gasoline engine",
-      "price": 0.00,
-      "currency": "RM",
-      "image": "RATO R200 BARE ENGINE, 6.5 HP.PNG",
-      "specifications": "• Carburetor: Flat suction valve\n• Horsepower: 6.5 HP @ 3600 rpm\n• Fuel used: Unleaded gasoline\n• PTO shaft rotation: Counterclockwise\n• Torque: 11.0 N.m @ 2500 rpm\n• Displacement: 196 cm³"
-    },
+   
     {
       "id": "robin-ey-20-bare-engine",
       "name": "ROBIN EY-20 BARE ENGINE",
@@ -1390,6 +1342,15 @@
           "currency": "RM",
           "image": "DYNATEC SJ-10000 EVAPORATIVE AIR COOLER.PNG",
           "specifications": "• Power: 0.45 kW\n• Volts: 220V 50Hz\n• Water Used: 5-7 L/h\n• Water Capacity: 90 L\n• Air Flow: 10000 m³/h\n• Noise: 64 dBA"
+        },
+         {
+          "id": "sim-20k-air-coolerr",
+          "name": "SIM-20K AIR COOLER",
+          "description": "Large capacity evaporative air cooler",
+          "price": 0.00,
+          "currency": "RM",
+          "image": "SIM-20K AIR COOLER.PNG",
+            "specifications": "• Power: 0.75 kW\n• Volts: 220V 50Hz\n• Dimension: 740x500x1420\n• Water Capacity: 130 L\n• Air Flow: 20000 m³/h\n• Net Weight / Gross Weight: 21.4 / 25 kgs"
         }
       ]
     },
@@ -1433,6 +1394,20 @@
   "name": "HARDWARE",
   "description": "Various hardware tools and supplies",
   "products": [
+    {
+  "id": "cayken-scy35hd-magnetic-drill",
+  "name": "CAYKEN SCY-35HD MAGNETIC DRILL",
+  "description": "Heavy-duty magnetic drill machine",
+  "price": 0.00,
+  "currency": "RM",
+  "image": "CAYKEN SCY-35HD MAGNETIC DRILL.png",
+  "images": [
+    "CAYKEN SCY-35HD MAGNETIC DRILL.png",
+    "CAYKEN SCY-35HD MAGNETIC DRILL_SPEC.png"
+  ],
+  "specifications": "• Core Drill Dia: Φ35mm • Rated Voltage: 110/220V~ • Rated Frequency: 50-60Hz • Rated Input Power: 1550W • No-load Speed: 100-870rpm • Cutting Depth: 30mm • Stroke: ≤120mm • Cable Length: 2.5m • Magnet Dimension: 166×80×50mm • Net/Gross Weight: ≤11kg / 15.8kg • Packing Size: 58×17×37cm • Packing Material: Plastic • Shank: Quickin / Weldon"
+}
+,
     {
       "id": "4-stretch-film-clear-300g",
       "name": "4\" STRETCH FILM (CLEAR) 300G",
@@ -1676,24 +1651,7 @@
       "image": "KEN.jpg",
       "specifications": "• Max Bit Diameter: 23mm\n• Rated Voltage: 220V\n• Input Power: 1200W\n• Magnetic Adhesion: 13000N\n• No Load Speed: 330r/min\n• Output Power: 860W\n• Fixture: MI2\n• Drill Bit Capacity: 23mm (twist), 70mm (hollow)\n• Base Dimensions: 205x105x72mm"
     },
-    {
-      "id": "mig-wire-gear-08-10",
-      "name": "MIG WIRE GEAR 0.8/1.0",
-      "description": "MIG welding wire feed gears",
-      "price": 0.00,
-      "currency": "RM",
-      "image": "MIG GEAR 0.8-1.0.png",
-      "specifications": "• Compatible Wire Sizes: 0.8mm/1.0mm\n• Models: WLDA285, WLDA071"
-    },
-    {
-      "id": "mig-wire-gear-10-12",
-      "name": "MIG WIRE GEAR 1.0/1.2",
-      "description": "MIG welding wire feed gears",
-      "price": 0.00,
-      "currency": "RM",
-      "image": "MIG GEAR 1.0-1.2.png",
-      "specifications": "• Compatible Wire Sizes: 1.0mm/1.2mm\n• Models: WLDA334, WLDA072"
-    },
+  
     {
       "id": "mpm-mp16-550-bench-drill",
       "name": "MPM MP16-550 16MM BENCH DRILLING MACHINE",
@@ -1730,15 +1688,7 @@
       "image": "ROBINJAPAN - AC PLUG [GENA001], DGDWGETQEC6500-3 PRONG PLUG (AC PLUG)30A [GENA002], DY600900 - AC PLUG ( I U I ) [GENA003], ET950ET-1 - 3 PIN PLUG ( I ) [GENA004].PNG",
       "specifications": "• Models: GENA001, GENA002 (30A 3-prong), GENA003, GENA004 (3-pin)"
     },
-    {
-      "id": "samsam-ssf150-fogging-machine",
-      "name": "SAMSAM SSF-150 FOGGING MACHINE",
-      "description": "Thermal aerosol fogging machine",
-      "price": 0.00,
-      "currency": "RM",
-      "image": "SAMSAM SSF-150~.jpg",
-      "specifications": "• Type: Thermal Aerosol Fog\n• Starting Method: Push Button Start\n• Power Supply: 12V DC Rechargeable Battery\n• Dimensions: 230x1350x340mm\n• Weight: 9kg (empty)\n• Gasoline Tank: 1.8L\n• Gasoline Consumption: 1.5L/h\n• Solution Tank: 8L (Stainless Steel 304)\n• Applications: Mosquito control, pest control, plant protection"
-    },
+   
     {
       "id": "senco-spray-hose",
       "name": "SENCO-S SPRAY HOSE (8.5MM X 14.5 X 100MTR)",
@@ -3991,24 +3941,7 @@
       "image": "BENMA BM80KB-3 3” PUMP.png",
       "specifications": "• Inlet/Outlet: 3\"\n• Capacity: 36 m³/h\n• Head: 28 m\n• Suction Head: 7 m\n• Engine: 170 FD\n• Engine Displacement: 296 ml\n• Output: 4.0 kW"
     },
-    {
-      "id": "lautop-ldp50c-water-pump",
-      "name": "LAUNTOP LDP50C 2\" WATER PUMP",
-      "description": "2\" gasoline water pump with LA170FA engine for reliable water transfer.",
-      "price": 0.00,
-      "currency": "RM",
-      "image": "LAUNTOP LDP50C 2 WATER PUMP.PNG",
-      "specifications": "• Engine: LA170FA\n• Output: 3.8 - 4.2 HP\n• Suction: 8 m\n• Inlet/Outlet: 2\"\n• Displacement: 219 cc\n• Fuel Tank: 2.5 L\n• Flow: 500 L/min\n• Discharge: 25 m"
-    },
-    {
-      "id": "lautop-ldp80c-water-pump",
-      "name": "LAUNTOP LDP80C 3\" WATER PUMP",
-      "description": "3\" diesel water pump with LA178FA engine for heavy-duty applications.",
-      "price": 0.00,
-      "currency": "RM",
-      "image": "LAUNTOP LDP80C 3 WATER PUMP.PNG",
-      "specifications": "• Engine: LA178FA (Diesel)\n• Engine Output: 5.0 HP\n• Suction: 8 m\n• Inlet/Outlet: 3\"\n• Lift: 36 m\n• Flow: 833 L/min\n• Discharge: 25 m\n• Fuel Tank: 3.5 L"
-    },
+
     {
       "id": "lautop-ldp100c-water-pump",
       "name": "LAUNTOP LDP100C 4\" WATER PUMP",
@@ -4186,34 +4119,7 @@
       "specifications": "• Power: 2200 W\n• Pressure: 130 bar\n• Flow: 8.0 L/min\n• Motor: Induction"
     
     },
-    {
-      "id": "annovi-vip8-130",
-      "name": "ANNOVI VIP8.130 HIGH PRESSURE CLEANER",
-      "description": "2.2kW high-pressure cleaner suitable for cars, boats, campers, roofs, tools, houses, motorcycles, swimming pools, and flooring.",
-      "price": 0.00,
-      "currency": "RM",
-      "image": "ANNOVI VIP8.130 HIGH PRESSURE CLEANER.png",
-      "specifications": "• Power: 2.2 kW\n• Pressure: 130 Bar\n• Flow: 8 L/min\n• Applications: Cars, boats, campers, roofs, tools, houses, motorcycles, swimming pools, flooring"
-    , "reviews": [
-  {
-    "reviewer": "Vui Leng",
-    "rating": 5,
-    "comment": "Fantastic drill, works perfectly for all my projects!",
-    "date": "2023-12-28T16:56:00",
-    "media": [
-      { "type": "photo", "src": "review-photo1.jpg" },
-      { "type": "video", "src": "review-video1.mp4" }
-    ]
-  },
-  {
-    "reviewer": "John Doe",
-    "rating": 4,
-    "comment": "Solid performance for the price point",
-    "date": "2023-12-15T10:30:00",
-    "media": []
-  }
-]
-    },
+
     {
       "id": "benma-bm-19-mb",
       "name": "BENMA BM-19-MB HIGH PRESSURE CLEANER",
@@ -4314,15 +4220,6 @@
       "specifications": "• Power: 1400 W\n• Pressure: 70 - 100 bar\n• Flow: 6.0 L/min\n• Hose: 5.0 metre\n• Cable: 5.0 metre"
     },
     {
-      "id": "karcher-k2-420",
-      "name": "KARCHER HIGH PRESSURE WASHER K2.420 AIR CON",
-      "description": "Compact pressure washer specifically designed for air conditioner cleaning.",
-      "price": 0.00,
-      "currency": "RM",
-      "image": "KARCHER HIGH PRESSURE WASHER K2.420 AIR CON.PNG",
-      "specifications": "• Power: 1400 W\n• Pressure: 20 - 100 bar\n• Flow: 360 L/min\n• Voltage: 240 V\n• Hose: 7.5 metre\n• Weight: 7.87 kg"
-    },
-    {
       "id": "karcher-hd5-11-cage",
       "name": "KARCHER HIGH PRESSURE WASHER, HD5/11 CAGE CLASSIC",
       "description": "Professional-grade pressure washer with cage protection for industrial use.",
@@ -4339,15 +4236,6 @@
       "currency": "RM",
       "image": "MASTERJET MJ6.105i HIGH PRESSURE CLEANER.PNG",
       "specifications": "• Power: 1200 W\n• Pressure: 70 bar\n• Flow: 6.0 L/min"
-    },
-    {
-      "id": "masterjet-mj-8130vi",
-      "name": "MASTERJET MJ-8130VI HIGH PRESSURE CLEANER",
-      "description": "2200W pressure cleaner with induction motor for reliable performance.",
-      "price": 0.00,
-      "currency": "RM",
-      "image": "MASTERJET MJ-8130VI HIGH PRESSURE CLEANER.PNG",
-      "specifications": "• Power: 2200 W\n• Pressure: 130 bar\n• Flow: 8.0 L/min\n• Motor: Induction"
     },
     {
       "id": "powerjet-h2100",
@@ -4813,15 +4701,7 @@
       "image": "ET-1~.jpg",
       "specifications": "Rated output: 0.8kVA\nMax. output: 0.96kVA\nOutput Voltage: 240V\nFrequency: 50Hz\nDC Output: 12V 8.0A\nFuel Tank Size: 4L\nStarting system: Recoil\nOperating noise level (7m): 61dB\nDimension: L367 x W312 x H375\nNet weight: 19kg"
     },
-    {
-      "id": "lutian-lt9000en-generator",
-      "name": "LUTIAN LT9000EN GASOLINE GENERATOR",
-      "description": "7.0KW gasoline generator with both recoil and electric start options.",
-      "price": 0.00,
-      "currency": "RM",
-      "image": "LT9000EN~.jpg",
-      "specifications": "Frequency: 50HZ\nRated power: 7.0KW\nMax.power: 7.5KW\nAC Voltage: 240V\nFuel capacity: 25L\nStart system: Recoil/E-start\nDimensions: 695*525*545\nNet weight: 87kgs"
-    },
+   
     {
       "id": "mpower-mef2800fw-generator",
       "name": "MPOWER MEF2800FW GENERATOR",
@@ -4903,42 +4783,8 @@
       "image": "MPDG7500LN~.jpg",
       "specifications": "Frequency: 50Hz\nVoltage: 240V\nCurrent: 20.8A\nRated Power: 5.0kW\nMax AC Output: 5.5kW\nPower Factor: 1.0\nNet Weight: 154kg\nPerformance Class: G1\nAltitude: ≤1000m\nMax Ambient Temp.: 40°C\nEngine: 186FA\nRated Speed: 3000rpm\nProtection Grade: IP23M"
     },
-    {
-      "id": "senci-sc4000i-inverter",
-      "name": "SENCI SC4000i-0 PETROL GENERATOR INVERTER SILENT TYPE",
-      "description": "Silent inverter generator with digital technology and low noise operation.",
-      "price": 0.00,
-      "currency": "RM",
-      "image": "SC4000I~.jpg",
-      "specifications": "AC Voltage: 240V\nFrequency: 50HZ\nRated power: 3.5KW\nMax. power: 4.0KW\nFuel capacity: 10L\nRun time (50%-100% load): 8.5-5.5h\nStart system: Recoil/E-start\nNoise Level (@1/4 load;7m): 62dB\nDimensions: 665*562*600mm\nNet weight: 54kg\nTechnology: Digital Inverter"
-    },
-    {
-      "id": "seaci-sc4000-generator",
-      "name": "SEACI SC4000 GASOLINE GENERATOR",
-      "description": "3.3KW gasoline generator with SC230 (7.5HP) engine and recoil start.",
-      "price": 0.00,
-      "currency": "RM",
-      "image": "SC4000~.jpg",
-      "specifications": "Engine: SC230 (7.5HP)\nFrequency: 50HZ\nRated power: 3.3KW\nMax.power: 3.5KW\nAC Voltage: 240V\nFuel capacity: 15L\nStart system: Recoil\nDimensions: 620*480*510mm\nNet weight: 53kgs"
-    },
-    {
-      "id": "seaci-sc8000-generator",
-      "name": "SEACI SC8000 GASOLINE GENERATOR",
-      "description": "6.5KW gasoline generator with SC420 (14HP) engine and dual start options.",
-      "price": 0.00,
-      "currency": "RM",
-      "image": "SC8000~.jpg",
-      "specifications": "Engine: SC420 (14HP)\nFrequency: 50HZ\nRated power: 6.5KW\nMax.power: 7.0KW\nAC Voltage: 240V\nFuel capacity: 25L\nStart system: Recoil/E-start\nDimensions: 725*555*610mm\nNet weight: 90kgs"
-    },
-    {
-      "id": "senci-sc10000-generator",
-      "name": "SENCI SC10000 GASOLINE GENERATOR",
-      "description": "7.0KW gasoline generator with SC460 (16HP) engine and dual start options.",
-      "price": 0.00,
-      "currency": "RM",
-      "image": "SC10000~.jpg",
-      "specifications": "Engine: SC460 (16HP)\nFrequency: 50HZ\nRated power: 7 KW\nMax.power: 8 KW\nAC Voltage: 240V\nFuel capacity: 25L\nStart system: Recoil/E-start\nDimensions: 725*555*610mm\nNet weight: 94kg"
-    },
+   
+   
     {
       "id": "senci-sc1250-generator",
       "name": "SENCI SC1250 GASOLINE GENERATOR",
@@ -4956,6 +4802,42 @@
       "currency": "RM",
       "image": "SC2500~.jpg",
       "specifications": "Frequency: 50HZ\nRated power: 2.0KW\nMax.power: 2.2KW\nAC Voltage: 240V\nFuel capacity: 15L\nStart system: Recoil\nDimensions: 620*490*490mm\nNet weight: 43kgs"
+    },
+     {
+      "id": "seaci-sc4000-generator",
+      "name": "SENCI SC4000 GASOLINE GENERATOR",
+      "description": "3.3KW gasoline generator with SC230 (7.5HP) engine and recoil start.",
+      "price": 0.00,
+      "currency": "RM",
+      "image": "SC4000~.jpg",
+      "specifications": "Engine: SC230 (7.5HP)\nFrequency: 50HZ\nRated power: 3.3KW\nMax.power: 3.5KW\nAC Voltage: 240V\nFuel capacity: 15L\nStart system: Recoil\nDimensions: 620*480*510mm\nNet weight: 53kgs"
+    },
+    {
+      "id": "seaci-sc8000-generator",
+      "name": "SEACI SC8000 GASOLINE GENERATOR",
+      "description": "6.5KW gasoline generator with SC420 (14HP) engine and dual start options.",
+      "price": 0.00,
+      "currency": "RM",
+      "image": "SC8000~.jpg",
+      "specifications": "Engine: SC420 (14HP)\nFrequency: 50HZ\nRated power: 6.5KW\nMax.power: 7.0KW\nAC Voltage: 240V\nFuel capacity: 25L\nStart system: Recoil/E-start\nDimensions: 725*555*610mm\nNet weight: 90kgs"
+    },
+     {
+      "id": "senci-sc10000-generator",
+      "name": "SENCI SC10000 GASOLINE GENERATOR",
+      "description": "7.0KW gasoline generator with SC460 (16HP) engine and dual start options.",
+      "price": 0.00,
+      "currency": "RM",
+      "image": "SC10000~.jpg",
+      "specifications": "Engine: SC460 (16HP)\nFrequency: 50HZ\nRated power: 7 KW\nMax.power: 8 KW\nAC Voltage: 240V\nFuel capacity: 25L\nStart system: Recoil/E-start\nDimensions: 725*555*610mm\nNet weight: 94kg"
+    },
+     {
+      "id": "senci-sc4000i-inverter",
+      "name": "SENCI SC4000i-0 PETROL GENERATOR INVERTER SILENT TYPE",
+      "description": "Silent inverter generator with digital technology and low noise operation.",
+      "price": 0.00,
+      "currency": "RM",
+      "image": "SC4000I~.jpg",
+      "specifications": "AC Voltage: 240V\nFrequency: 50HZ\nRated power: 3.5KW\nMax. power: 4.0KW\nFuel capacity: 10L\nRun time (50%-100% load): 8.5-5.5h\nStart system: Recoil/E-start\nNoise Level (@1/4 load;7m): 62dB\nDimensions: 665*562*600mm\nNet weight: 54kg\nTechnology: Digital Inverter"
     }
   ]
 },
@@ -4963,7 +4845,10 @@
   "id": "WELDING MACHINE",
   "name": "WELDING MACHINE",
   "description": "A comprehensive range of welding equipment including MIG welders, ARC welders, plasma cutters, and diesel welder generators from brands like RILAND, MPM, EMT, and MOTO.",
-  "products": [
+  "subcategories":[{
+    "id":"WELDING MACHINE",
+    "name":"WELDING MACHINE",
+    "products": [
     {
       "id": "mpm-ac300-welder",
       "name": "MPM AC300 WELDING MACHINE",
@@ -5064,24 +4949,6 @@
       "specifications": "Power: 220V±15%\nRated Input Current: 22A\nNo-load Voltage: 61V\nNo-load Loss: 40W\nOutput Current: 30-200A\nEfficiency: 85%\nDuty Cycle: 80%\nPower Factor: 0.93\nTechnology: IGBT"
     },
     {
-      "id": "riltech-im140-mig",
-      "name": "RILTECH IM140 GASLESS MIG WELDING MACHINE",
-      "description": "Gasless MIG welding machine with 30-140A output range.",
-      "price": 0.00,
-      "currency": "RM",
-      "image": "IM140~.jpg",
-      "specifications": "Input Voltage: 240V\nRated Input Power: 4.1KVA\nInput Current: 17A\nOutput Range: 30-140A\nRated Duty Cycle: 60%\nWeight: 5.24kg"
-    },
-    {
-      "id": "lautop-ldw200arne",
-      "name": "LAUNTOP LDW200ARNE DIESEL WELDER GENERATOR",
-      "description": "Diesel welder generator with electric start and 4.5KW output.",
-      "price": 0.00,
-      "currency": "RM",
-      "image": "LDW200ARNE~.jpg",
-      "specifications": "Voltage/Frequency: 240V/50Hz\nRated & Max AC Output: 4.5/5.0KW\nDC Output: 12V\nWelding Voltage: 22~26V\nWelding Current: 50-150A\nMax Arcing Current: 200A\nDuty Cycle: 60%\nEngine Model: LA 188F\nOil Capacity: 1.65L\nFuel Tank: 12.5L\nDimension: 800x525x600mm\nNoise Level: <82dB\nWeight: 135kg"
-    },
-    {
       "id": "megatec-zx7-225g",
       "name": "MEGATEC ZX7-225G WELDING MACHINE",
       "description": "Compact welding machine with accessories included.",
@@ -5135,33 +5002,7 @@
       "image": "MOTO 5GFCLWE~.jpg",
       "specifications": "Rated Frequency: 50Hz\nRated Output: 4.5kVA\nMax Power: 5.0kVA\nRated Voltage: 240V\nRated Welding Current: 50-180A (DC)\nWelding Operating Voltage: 20-30V (DC)\nWelding Current Adjustment: 30-180A\nElectrode: 1.0-4.0mm\nWelding Load Continuous Rating: 40%\nEngine: MT186FGE\nPower: 8.57HP\nCooling System: Air Cooled\nStarting System: Recoil/Electric\nFuel Tank Capacity: 12.5L\nDimension: 700x465x660mm\nNet Weight: 105kg"
     },
-    {
-      "id": "mpm-ac300-welder",
-      "name": "MPM AC300 WELDING MACHINE",
-      "description": "300A AC welding machine with Class F insulation and IP21 protection.",
-      "price": 0.00,
-      "currency": "RM",
-      "image": "AC300~.jpg",
-      "specifications": "Model: AC-300\nMax No-Load Voltage: 60V\nRated Output Current: 300A\nWelding Wire: 1.6 - 5.0 mm\nInsulation Class: Class F\nProtection Degree: IP21\nWeight: 66kg"
-    },
-    {
-      "id": "mpm-ac400-welder",
-      "name": "MPM AC400 WELDING MACHINE",
-      "description": "400A AC welding machine for heavy-duty welding applications.",
-      "price": 0.00,
-      "currency": "RM",
-      "image": "AC400~.jpg",
-      "specifications": "Model: AC-400\nMax No-Load Voltage: 60V\nRated Output Current: 400A\nWelding Wire: 1.6 - 6.0 mm\nInsulation Class: Class F\nProtection Degree: IP21\nWeight: 73kg"
-    },
-    {
-      "id": "mpm-ac500-welder",
-      "name": "MPM AC500 WELDING MACHINE",
-      "description": "500A high-capacity AC welding machine for industrial applications.",
-      "price": 0.00,
-      "currency": "RM",
-      "image": "AC500~.jpg",
-      "specifications": "Model: AC-500\nMax No-Load Voltage: 60V\nRated Output Current: 500A\nWelding Wire: 1.6 - 7.0 mm\nInsulation Class: Class F\nProtection Degree: IP21\nWeight: 82kg"
-    },
+   
     {
       "id": "riland-arc188e-welder",
       "name": "RILAND MMA ARC188E WELDING MACHINE",
@@ -5370,24 +5211,6 @@
       "specifications": "Generator Voltage: 240V\nGenerator Current: 8.3A\nRated Power: 2000W\nMax Power: 2200W\nWelding Current Range: DC 50-240A\nLoading Ratio: 60%\nRPM: 3600\nFuel Tank: 18L"
     },
     {
-      "id": "senco-pro-168a",
-      "name": "SENCO-PRO 168A WELDER MACHINE",
-      "description": "Manual welding machine with 168A capacity and permanent magnet alternator.",
-      "price": 0.00,
-      "currency": "RM",
-      "image": "SENCO 168A~1.jpg",
-      "specifications": "Welder Mode: Manual welding\nNon-Loading Voltage: 60-70V\nLoading Voltage: 22-28V\nMax Welding Current: 168A\nRated Duty Cycle: 60%\nElectrode Diameter: 2.0-3.2mm\nEngine Model: 170F Single Cylinder, 4-Stroke, OHV\nRated Output: 7HP\nDisplacement: 225cc\nBore x Stroke: 70x55mm\nIgnition System: TCI\nFuel Tank Capacity: 6L\nCompression Ratio: 8.5:1\nFuel Consumption: ≤312 g/kW.h\nStarting System: Manual Start\nNet Weight: 39kg\nMachine Dimension: 618x465x523mm"
-    },
-    {
-      "id": "senco-230-250-welders",
-      "name": "SENCO 230A & 250E GASOLINE & DIESEL ENGINE WELDERS",
-      "description": "Gasoline and diesel engine welders with 230A and 250A capacities.",
-      "price": 0.00,
-      "currency": "RM",
-      "image": "SENCO 230 250.jpg",
-      "specifications": "230A Gasoline Welder:\n- Welding Mode: Manual Welding\n- Non-Loading Voltage: 70-75V\n- Loading Voltage: 22-30V\n- Current: 50-230A\n- Duty Cycle: 60%\n- Engine: 16HP, 460cc\n- Fuel Tank: 25L\n- Weight: 83kg\n\n250E Diesel Welder:\n- Welding Mode: Manual Welding, Argon Arc Welding\n- Non-Loading Voltage: 90V\n- Loading Voltage: 20-25V, 22-28V\n- Current: 20-250A\n- Duty Cycle: 80%\n- Engine: 195F, 13HP, 499cc\n- Fuel Tank: 20L\n- Weight: 110kg"
-    },
-    {
       "id": "olym-spot-pro",
       "name": "OLYM SPOT PRO AUTO BODY REPAIR MACHINE",
       "description": "Automotive dent repair machine with multiple functions for bodywork.",
@@ -5423,31 +5246,14 @@
       "image": "TIG250A~.jpg",
       "specifications": "Voltage: 220V 50Hz\nOutput Current: 10-250A\nNo-load Voltage: TIG:35V, MMA:60V\nAttenuation Time: 0-5S\nPower Factor: 0.7\nDuty Cycle: 60%\nEfficiency: 85%\nProtection Class: IP21\nCooling Method: Air-cooling"
     },
+   
     {
-      "id": "wim-mig210s",
-      "name": "WIM MIG210S WELDING MACHINE",
-      "description": "MIG welding machine with 210A capacity and 10-step voltage adjustment.",
-      "price": 0.00,
-      "currency": "RM",
-      "image": "WIM 210S~.jpg",
-      "specifications": "Mains Supply: 1-phase 50/60Hz\nVoltage: 220V-240V\nMax Input Current: 33A\nOutput Rating: 210A/24.5V\nDuty Cycle: 145A/21.3V @60%, 110A/19.5V @100%\nOutput Control: Tapping\nVoltage Adjustment: 10 Steps\nOpen Circuit Voltage: 18V-45V\nWelding Range: 30-210A\nFiller Wire Size: 0.6-1.0mm\nWire Feeding Speed: 1-20m/min\nTimer: 0-5 sec\nProtection: IPS21\nInsulation Class: H180°C\nKVA: 7.5\nWeight: 72kg\nDimension: 450x850x720mm"
-    },
-    {
-      "id": "wim-mig200s",
-      "name": "WIM MIG200S WELDING MACHINE",
-      "description": "MIG200S inverter welding machine with complete accessory package.",
-      "price": 0.00,
-      "currency": "RM",
-      "image": "WIM MIG200S~.jpg",
-      "specifications": "Primary Supply: 1ph, 240V, 50Hz\nInput Current: 6.1kVA\nOutput: 20-200A (MIG), 20-160A (MMA)\nWire Diameter: 0.5-1.0mm\nWeight: 18kg\nDimension: 305x500x370mm\nIncludes: MIG Torch, Electrode holder, Earth Clamp, CO2 regulator, CO2 Industrial Gas (Small), MIG Wire 0.8mm x 5KG"
-    },
-    {
-      "id": "riland-zx7-315gt",
-      "name": "RILAND ZX7 315GT WELDING MACHINE",
+      "id": "riland-arc-315d",
+      "name": "RILAND ARC 315D WELDING MACHINE",
       "description": "Three-phase welding machine with 40-315A output range.",
       "price": 0.00,
       "currency": "RM",
-      "image": "ZX7-315GT~.jpg",
+      "image": "RILAND ARC 315D WELDING MACHINE.png",
       "specifications": "Input Voltage: Three-phase 380±15%\nFrequency: 50/60Hz\nRated Input Power: 19.7KVA\nOutput Current: 40-315A\nNo-load Voltage: 60V\nEfficiency: 85%\nPower Factor: 0.93\nInsulation Class: F\nProtection Rating: IP21"
     },
     {
@@ -5459,7 +5265,32 @@
       "image": "ZX7 400GT~.jpg",
       "specifications": "Input Voltage: Three-phase 380±15%\nFrequency: 50/60Hz\nRated Input Power: 18.2KVA\nOutput Current: 40-400A\nNo-load Voltage: 68V\nEfficiency: 80%\nPower Factor: 0.93\nInsulation Class: F\nProtection Rating: IP21"
     }
-  ]
+  ]},
+   {
+    "id":"SPARE PART",
+    "name":"SPARE PART",
+    "products":[
+        {
+      "id": "mig-wire-gear-08-10",
+      "name": "MIG WIRE GEAR 0.8/1.0",
+      "description": "MIG welding wire feed gears",
+      "price": 0.00,
+      "currency": "RM",
+      "image": "MIG GEAR 0.8-1.0.png",
+      "specifications": "• Compatible Wire Sizes: 0.8mm/1.0mm\n• Models: WLDA285, WLDA071"
+    },
+    {
+      "id": "mig-wire-gear-10-12",
+      "name": "MIG WIRE GEAR 1.0/1.2",
+      "description": "MIG welding wire feed gears",
+      "price": 0.00,
+      "currency": "RM",
+      "image": "MIG GEAR 1.0-1.2.png",
+      "specifications": "• Compatible Wire Sizes: 1.0mm/1.2mm\n• Models: WLDA334, WLDA072"
+    }
+    ]
+   }
+]
 }
   ]
 }

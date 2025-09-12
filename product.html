@@ -141,6 +141,79 @@
   border-radius: 5px;
 }
 
+#lightbox {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(0,0,0,0.9);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+}
+ /* Lightbox overlay */
+.lightbox {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.9);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.lightbox-content {
+  max-width: 95%;
+  max-height: 95%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.lightbox-content img,
+.lightbox-content video {
+  
+  object-fit: contain;
+  border-radius: 8px; /* optional */
+    max-width: 90vw;   /* max 90% of viewport width */
+  max-height: 90vh;  /* max 90% of viewport height */
+  width: auto;
+  height: auto;
+  object-fit: contain; /* keep aspect ratio */
+  display: block;
+  margin: auto;
+}
+
+
+/* Close button */
+.lightbox-close {
+  position: absolute;
+  top: 20px; right: 30px;
+  font-size: 2rem;
+  color: white;
+  cursor: pointer;
+}
+
+/* Arrows */
+.lightbox-prev, .lightbox-next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 2rem;
+  color: white;
+  background: rgba(0,0,0,0.4);
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  cursor: pointer;
+  user-select: none;
+}
+.lightbox-prev { left: 20px; }
+.lightbox-next { right: 20px; }
+
+
 </style>
 
 </head>
@@ -202,6 +275,18 @@
         <a href="https://wa.me/601110513111" target="_blank" class="whatsapp-float">
     <i class="fab fa-whatsapp"></i>
 </a>
+
+
+    <!-- Lightbox -->
+ <!-- Lightbox -->
+<div class="lightbox" id="lightbox">
+  <span class="lightbox-close" id="lightboxClose">&times;</span>
+  <span class="lightbox-prev" id="lightboxPrev">&#10094;</span>
+  <div class="lightbox-content" id="lightboxContent"></div>
+  <span class="lightbox-next" id="lightboxNext">&#10095;</span>
+</div>
+
+
     </main>
 
     <footer>
@@ -270,6 +355,14 @@ async function loadProductData() {
     console.error(err);
     showError('Error loading product');
   }
+
+  // Clear content (important for iframe embeds later)
+  lightboxContent.innerHTML = "";
+
+  // Hide the lightbox
+  lightbox.style.display = "none";
+
+
 }
 
 function showError(message) {
@@ -379,19 +472,19 @@ function displayProductData(product, category) {
           <div class="stars">${getStarRating(review.rating)}</div>
           ${review.title ? `<div class="review-title">${review.title}</div>` : ''}
           <div class="review-content">${review.comment}</div>
-          ${review.media && review.media.length > 0 ? `
-            <div class="review-media">
-              ${review.media.map(item => {
-                if (item.type === 'photo') {
-                  return `<img src="reviews/${item.src}" alt="review photo" class="review-photo" />`;
-                } else if (item.type === 'video') {
-                  return `<video controls class="review-video">
-                            <source src="reviews/${item.src}" type="video/mp4">
-                            Your browser does not support the video tag.
-                          </video>`;
-                }
-                return '';
-              }).join('')}
+         ${review.media && review.media.length > 0 ? `
+                <div class="review-media">
+                  ${review.media.map(item => {
+                    if (item.type === 'photo') {
+                      return `<img src="reviews/${item.src}" alt="review photo" class="review-photo" />`;
+                    } else if (item.type === 'video') {
+                      return `<video controls class="review-video">
+                                <source src="reviews/${item.src}" type="video/mp4">
+                                Your browser does not support the video tag.
+                              </video>`;
+                    }
+                    return '';
+                  }).join('')}
             </div>
           ` : ''}
         </div>
@@ -459,8 +552,80 @@ function formatDate(dateString) {
     minute: '2-digit'
   });
 }
+
+ let currentIndex = 0;
+let mediaItems = [];
+
+document.addEventListener("click", function(e) {
+  if (e.target.classList.contains("main-image") || e.target.classList.contains("main-image")) {
+    e.preventDefault();
+    mediaItems = Array.from(e.target.closest(".product-gallery").querySelectorAll("img, video"));
+    currentIndex = mediaItems.indexOf(e.target);
+    openLightbox(currentIndex);
+  }
+});
+
+function openLightbox(index) {
+  const lightbox = document.getElementById("lightbox");
+  const lightboxContent = document.getElementById("lightboxContent");
+  lightbox.style.display = "flex";
+  showMedia(index, lightboxContent);
+}
+
+function closeLightbox() {
+  const lightbox = document.getElementById("lightbox");
+  const lightboxContent = document.getElementById("lightboxContent");
+
+  // Stop any video before closing
+  const video = lightboxContent.querySelector("video");
+  if (video) {
+    video.pause();
+    video.currentTime = 0; // optional: reset to start
+  }
+
+  // Clear content (important for iframe embeds later)
+  lightboxContent.innerHTML = "";
+
+  // Hide the lightbox
+  lightbox.style.display = "none";
+}
+
+document.getElementById("lightboxClose").onclick = closeLightbox;
+document.getElementById("lightbox").addEventListener("click", function(e) {
+  if (e.target.id === "lightbox") {
+    closeLightbox();
+  }
+});
+
+
+function showMedia(index, container) {
+  const item = mediaItems[index].cloneNode(true);
+  item.controls = item.tagName === "VIDEO"; // enable controls if video
+  container.innerHTML = "";
+  container.appendChild(item);
+}
+
+document.getElementById("lightboxPrev").onclick = () => {
+  currentIndex = (currentIndex - 1 + mediaItems.length) % mediaItems.length;
+  showMedia(currentIndex, document.getElementById("lightboxContent"));
+};
+
+document.getElementById("lightboxNext").onclick = () => {
+  currentIndex = (currentIndex + 1) % mediaItems.length;
+  showMedia(currentIndex, document.getElementById("lightboxContent"));
+};
+
+/* Close on background click */
+document.getElementById("lightbox").addEventListener("click", function(e) {
+  if (e.target.id === "lightbox") this.style.display = "none";
+});
+
 </script>
      <script src="js/general.js"></script>
+
+
+ 
+
 
 </body>
 </html>
