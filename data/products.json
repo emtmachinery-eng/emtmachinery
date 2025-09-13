@@ -1395,6 +1395,15 @@
   "description": "Various hardware tools and supplies",
   "products": [
     {
+  "id": "rh-5451w-45l-injector-grease-pump",
+  "name": "RH-5451W (45L) INJECTOR GREASE PUMP",
+  "description": "45L injector grease pump with high compression ratio",
+  "price": 0.00,
+  "currency": "RM",
+  "image": "RH-5451W (45L) INJECTOR GREASE PUMP.jpg",
+  "specifications": "Compression Ratio: 40:1\nOutlet Pressure: 24-32 Mpa\nAir Inlet Range: 0.6-0.8 Mpa\nBarrel Capacity: 45L\nPump Capacity: 1.2 L/min\nGross Weight: 30 kg"
+},
+    {
   "id": "cayken-scy35hd-magnetic-drill",
   "name": "CAYKEN SCY-35HD MAGNETIC DRILL",
   "description": "Heavy-duty magnetic drill machine",
@@ -5264,7 +5273,16 @@
       "currency": "RM",
       "image": "ZX7 400GT~.jpg",
       "specifications": "Input Voltage: Three-phase 380±15%\nFrequency: 50/60Hz\nRated Input Power: 18.2KVA\nOutput Current: 40-400A\nNo-load Voltage: 68V\nEfficiency: 80%\nPower Factor: 0.93\nInsulation Class: F\nProtection Rating: IP21"
-    }
+    },
+    {
+  "id": "riland-mma-400g-welding-machine",
+  "name": "RILAND MMA 400G WELDING MACHINE",
+  "description": "400A MMA welding machine with high performance output",
+  "price": 0.00,
+  "currency": "RM",
+  "image": "RILAND MMA 400G WELDING MACHINE.jpg",
+  "specifications": "Power Voltage: 415V 50Hz\nOutput Range/OCV: 40-400A/68V/15V(VRD)\nAmps Input/Rated Output: 27.6A/400A\nWeight: 22 kg\nOutput Current/Voltage/Duty Cycle: 400A/36V/40%@40°C, 315A/32.6V/100%@40°C"
+}
   ]},
    {
     "id":"SPARE PART",
